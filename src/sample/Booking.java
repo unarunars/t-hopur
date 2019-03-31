@@ -1,5 +1,7 @@
 package sample;
 
+import java.util.ArrayList;
+
 public class Booking {
 
     public void bookTrip(int touristCount, Package soldPackage) {
