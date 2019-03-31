@@ -79,19 +79,19 @@ public class Package {
     public void removeFlightSeats(int n) {
         int flightSize = flightDate.size();
         for (int i = 0; i < flightSize; i++) {
-            System.out.println(flightDate.get(i) + " losaður, magn: " + n);
+            flightSeats = flightSeats-n;
         }
     }
     public void removeHotelSeats(int n) {
         int hotelSize = hotelDate.size();
         for (int i = 0; i < hotelSize; i++) {
-            System.out.println(hotelDate.get(i) + " losaður, magn: " + n);
+            hotelRooms = hotelRooms-n;
         }
     }
     public void removeEventSeats(int n) {
         int eventSize = eventDate.size();
         for (int i = 0; i < eventSize; i++) {
-            System.out.println(eventDate.get(i) + " losaður, magn: " + n);
+            eventSeats = eventSeats-n;
         }
     }
 
