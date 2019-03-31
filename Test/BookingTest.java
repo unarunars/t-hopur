@@ -41,11 +41,13 @@ class BookingTest {
     @Test
     void removeHotels() {
         book.removeHotels(2, myPackage);
-        assertEquals(2, myPackage.getHotelRooms());
+        assertEquals(3, myPackage.getHotelRooms());
     }
 
     @Test
     void removeEvents() {
-        
+        book.removeEvents(4, myPackage);
+        assertEquals(6, myPackage.getEventSeats());
+
     }
 }
