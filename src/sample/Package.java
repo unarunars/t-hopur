@@ -1,68 +1,98 @@
 package sample;
 
-public class Package {
-   String destination = "";
-   String event = "";
-   String hotel = "";
-   String flightDate = "";
-   String eventDate = "";
-   String hotelDate = "";
-   int flightSeats;
-   int hotelRooms;
-   int eventSeats;
+import java.util.ArrayList;
 
-   public void setDestination(String place){
-       destination = place;
-   }
-   public String getDestination(){
-       return destination;
-   }
-   public void setEvent(String thing){
-       event = thing;
-   }
-   public String getEvent(){
-       return event;
-   }
-   public void setHotel(String name){
-       hotel = name;
-   }
-   public String getHotel(){
-       return hotel;
-   }
-   public void setFlightDate(String date){
-       flightDate = date;
-   }
-   public String getFlightDate(){
-       return flightDate;
-   }
+public class Package {
+    String destination;
+    String event;
+    String hotel;
+    ArrayList<String> flightDate = new ArrayList<String>();
+    ArrayList<String> eventDate = new ArrayList<String>();
+    ArrayList<String> hotelDate = new ArrayList<String>();
+    int flightSeats;
+    int hotelRooms;
+    int eventSeats;
+
+    public void setDestination(String place){
+        destination = place;
+    }
+    public String getDestination(){
+        return destination;
+    }
+
+    public void setEvent(String thing){
+        event = thing;
+    }
+    public String getEvent(){
+        return event;
+    }
+
+    public void setHotel(String name){
+        hotel = name;
+    }
+    public String getHotel(){
+        return hotel;
+    }
+
+    public void setFlightDate(String date){
+        flightDate.add(date);
+    }
+    public ArrayList<String> getFlightDate(){
+        return flightDate;
+    }
+
     public void setHotelDate(String date){
-       hotelDate = date;
+        hotelDate.add(date);
     }
-    public String getHotelDate(){
-       return hotelDate;
+    public ArrayList<String> getHotelDate(){
+        return hotelDate;
     }
+
     public void setEventDate(String date){
-       eventDate = date;
+        eventDate.add(date);
     }
-    public String getEventDate(){
-       return eventDate;
+    public ArrayList<String> getEventDate(){
+        return eventDate;
     }
+
     public void setFlightSeats(int n){
-       flightSeats = n;
+        flightSeats = n;
     }
     public int getFlightSeats(){
-       return flightSeats;
+        return flightSeats;
     }
+
     public void setHotelRooms(int n){
-       hotelRooms = n;
+        hotelRooms = n;
     }
     public int getHotelRooms(){
-       return hotelRooms;
+        return hotelRooms;
     }
+
     public void setEventSeats(int n){
-       eventSeats = n;
+        eventSeats = n;
     }
     public int getEventSeats(){
-       return eventSeats;
+        return eventSeats;
     }
+
+    public void removeFlightSeats(int n) {
+        int flightSize = flightDate.size();
+        for (int i = 0; i < flightSize; i++) {
+            System.out.println(flightDate.get(i) + " losaður, magn: " + n);
+        }
+    }
+    public void removeHotelSeats(int n) {
+        int hotelSize = hotelDate.size();
+        for (int i = 0; i < hotelSize; i++) {
+            System.out.println(hotelDate.get(i) + " losaður, magn: " + n);
+        }
+    }
+    public void removeEventSeats(int n) {
+        int eventSize = eventDate.size();
+        for (int i = 0; i < eventSize; i++) {
+            System.out.println(eventDate.get(i) + " losaður, magn: " + n);
+        }
+    }
+
 }
