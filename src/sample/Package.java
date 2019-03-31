@@ -78,21 +78,15 @@ public class Package {
 
     public void removeFlightSeats(int n) {
         int flightSize = flightDate.size();
-        for (int i = 0; i < flightSize; i++) {
-            flightSeats = flightSeats-n;
-        }
+        flightSeats = flightSeats-n;
     }
     public void removeHotelSeats(int n) {
         int hotelSize = hotelDate.size();
-        for (int i = 0; i < hotelSize; i++) {
-            hotelRooms = hotelRooms-n;
-        }
+        hotelRooms = hotelRooms-n;
     }
     public void removeEventSeats(int n) {
         int eventSize = eventDate.size();
-        for (int i = 0; i < eventSize; i++) {
-            eventSeats = eventSeats-n;
-        }
+        eventSeats = eventSeats-n;
     }
 
 }

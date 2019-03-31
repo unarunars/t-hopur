@@ -20,4 +20,20 @@ public class Booking {
         soldPackage.removeEventSeats(touristCount);
     }
 
+    public boolean updateSeats(int touristCount, Package soldPackage) {
+        if (!soldPackage) return false;
+        ArrayList<String> flightDate = soldPackage.getFlightDate();
+        ArrayList<String> hotelDate = soldPackage.getHotelDate();
+        ArrayList<String> eventDate = soldPackage.getEventDate();
+        for (int i = 0; i < flightDate; i++) {
+            System.out.println("UPDATE flights SET flightSeats = " + soldPackage.getFlightSeats());
+        }
+        for (int i = 0; i < flightDate; i++) {
+            System.out.println("UPDATE hotels SET hotelRooms = " + soldPackage.getHotelRooms());
+        }
+        for (int i = 0; i < flightDate; i++) {
+            System.out.println("UPDATE events SET eventSeats = " + soldPackage.getEventSeats());
+        }
+        return true;
+    }
 }
