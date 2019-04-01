@@ -21,17 +21,17 @@ public class Booking {
     }
 
     public boolean updateSeats(int touristCount, Package soldPackage) {
-        if (!soldPackage) return false;
+        if (soldPackage == null) return false;
         ArrayList<String> flightDate = soldPackage.getFlightDate();
         ArrayList<String> hotelDate = soldPackage.getHotelDate();
         ArrayList<String> eventDate = soldPackage.getEventDate();
-        for (int i = 0; i < flightDate; i++) {
+        for (int i = 0; i < flightDate.size(); i++) {
             System.out.println("UPDATE flights SET flightSeats = " + soldPackage.getFlightSeats());
         }
-        for (int i = 0; i < flightDate; i++) {
+        for (int i = 0; i < hotelDate.size(); i++) {
             System.out.println("UPDATE hotels SET hotelRooms = " + soldPackage.getHotelRooms());
         }
-        for (int i = 0; i < flightDate; i++) {
+        for (int i = 0; i < eventDate.size(); i++) {
             System.out.println("UPDATE events SET eventSeats = " + soldPackage.getEventSeats());
         }
         return true;

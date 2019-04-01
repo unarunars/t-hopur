@@ -48,6 +48,17 @@ class BookingTest {
     void removeEvents() {
         book.removeEvents(4, myPackage);
         assertEquals(6, myPackage.getEventSeats());
+    }
+    @Test
+    void queryTest(){
+        boolean check = book.updateSeats(2, myPackage);
+        assertEquals(true, check);
+
+    }
+    @Test
+    void queryTest2(){
+        boolean check = book.updateSeats(2, null);
+        assertEquals(false, check);
 
     }
 }
