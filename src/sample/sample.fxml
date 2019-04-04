@@ -1,8 +1,72 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="36.0" prefWidth="775.0" style="-fx-background-color: mediumorchid;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutY="36.0" prefHeight="62.0" prefWidth="775.0" style="-fx-background-color: mediumorchid;">
+         <children>
+            <ImageView fitHeight="97.0" fitWidth="93.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../../../../Desktop/luminati.jpg" />
+               </image>
+               <effect>
+                  <Glow />
+               </effect>
+            </ImageView>
+            <Label prefHeight="81.0" prefWidth="690.0" text="       Nafn á appinu" textAlignment="RIGHT">
+               <font>
+                  <Font name="Century Gothic" size="44.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <GridPane layoutX="139.0" layoutY="204.0" prefHeight="152.0" prefWidth="497.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="hotelTakki" mnemonicParsing="false" prefHeight="131.0" prefWidth="137.0" text="Hótel" />
+            <Button mnemonicParsing="false" prefHeight="131.0" prefWidth="137.0" text="Pakka" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="131.0" prefWidth="137.0" text="Flug" GridPane.columnIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
