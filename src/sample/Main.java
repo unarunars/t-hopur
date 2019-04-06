@@ -1,11 +1,17 @@
 package sample;
+import leit.flug.Schedule;
 
 import java.util.ArrayList;
 
 public class Main {
 
     public static void packages1(){
+        Schedule lol = new Schedule();
+
         Package myPackage = new Package();
+
+        System.out.println("PRUFA+prufa" + lol.searchFlights("GJR","AEY","1:8"));
+
         myPackage.setDestination("Akureyri");
         myPackage.setFlightDate("01.06.18");
         myPackage.setFlightSeats(20);
@@ -25,7 +31,6 @@ public class Main {
         System.out.println("Dagsferð : " + myPackage.getEvent());
         System.out.println("Dagsetning á dagsferð : " + myPackage.getEventDate());
         System.out.println("Laus sæti í dagsferð : " + myPackage.getEventSeats());
-
     }
 
     public static void main(String[] args) {
