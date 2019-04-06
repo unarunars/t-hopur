@@ -68,12 +68,13 @@ public class HotelsDAO {
         return hotels;
     }
 
+
     public ArrayList<Hotel> getAllHotels() {
         ArrayList<Hotel> hotels = new ArrayList<>();
 
         try {
             stmt = conn.createStatement();
-            PreparedStatement p = conn.prepareStatement("SELECT * FROM Hotel");
+            PreparedStatement p = conn.prepareStatement("SELECT Name, HotelID, Stars, ReviewTotal, minPrice, Address, Phone, HotelInfo FROM Hotel");
 
             r = p.executeQuery();
             // For each query result, a new hotel object is created and added to a list which is then returned.

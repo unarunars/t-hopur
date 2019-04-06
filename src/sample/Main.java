@@ -33,10 +33,18 @@ public class Main {
         */
 
         searchActivity searchHotel = new searchActivity();
-        HotelsDAO hotel = new HotelsDAO();
 
+
+        //Hérna er sótt öll hótel
+        HotelsDAO hotel = new HotelsDAO();
         ArrayList hotels = hotel.getAllHotels();
-        
+        Hotel singleHotel;
+        for (int i = 0; i< hotels.size(); i++) {
+            singleHotel = (Hotel) hotels.get(i);
+            //Hérna geturu bætt við fetch t.d. singleHotel.getPrice()
+            System.out.println(singleHotel.getName());
+        }
+
         /*
         ArrayList north = hotel.hotelSearch("North region", 0, 100000);
         ArrayList west = hotel.hotelSearch("West region", 0, 100000);
