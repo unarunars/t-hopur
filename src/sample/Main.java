@@ -1,5 +1,9 @@
 package sample;
 
+import leit.hotel.Hotel;
+import leit.hotel.HotelsDAO;
+import leit.hotel.searchActivity;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -15,6 +19,7 @@ public class Main {
         myPackage.setEvent("Bjórbað");
         myPackage.setEventDate("05.06.18");
         myPackage.setEventSeats(10);
+        /*
         System.out.println("Fjörpakkinn");
         System.out.println("Áfangastaður: " + myPackage.getDestination());
         System.out.println("brottför: " + myPackage.getFlightDate());
@@ -25,7 +30,20 @@ public class Main {
         System.out.println("Dagsferð : " + myPackage.getEvent());
         System.out.println("Dagsetning á dagsferð : " + myPackage.getEventDate());
         System.out.println("Laus sæti í dagsferð : " + myPackage.getEventSeats());
+        */
 
+        searchActivity searchHotel = new searchActivity();
+        HotelsDAO hotel = new HotelsDAO();
+
+        ArrayList hotels = hotel.getAllHotels();
+        
+        /*
+        ArrayList north = hotel.hotelSearch("North region", 0, 100000);
+        ArrayList west = hotel.hotelSearch("West region", 0, 100000);
+        ArrayList south = hotel.hotelSearch("South region", 0, 100000);
+        ArrayList east = hotel.hotelSearch("East region", 0, 100000);
+        ArrayList rvk = hotel.hotelSearch("Capital area", 0, 100000);
+        */
     }
 
     public static void main(String[] args) {

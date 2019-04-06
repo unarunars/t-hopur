@@ -67,9 +67,11 @@ public class Hotel {
         return db.getHotelReviews(hotelID);
     }
 
+    /*
     public String toString() {
         return name + " - Price from: " + minprice + " - Stars: " + stars + " - " + reviewNr + " reviews";
     }
+    */
 
     @Override
     public boolean equals(Object o) {

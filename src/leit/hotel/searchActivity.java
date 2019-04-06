@@ -13,9 +13,7 @@ public class searchActivity {
         HotelsDAO database = new HotelsDAO();
         ArrayList<Hotel> hotelResults = database.HotelSearch(maxprice, area, guests);
         // A string version of the hotel object is shown
-        for (Hotel hotel : hotelResults) {
-            hotel.toString();
-        }
+
         return hotelResults;
     }
 
