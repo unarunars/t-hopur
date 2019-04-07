@@ -15,6 +15,7 @@ public class Flight {
             String ARRIVAL_TIME,
             int TRIP_PRICE) {
 
+
         this.NUMBER = NUMBER;
         this.DEPARTURE_AIRPORT = DEPARTURE_AIRPORT;
         this.ARRIVAL_AIRPORT = ARRIVAL_AIRPORT;
@@ -49,8 +50,10 @@ public class Flight {
         return TRIP_PRICE;
     }
 
+    /*
     @Override
     public String toString(){
         return getNumber();
     }
+    */
 }
