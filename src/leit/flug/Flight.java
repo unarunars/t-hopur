@@ -9,11 +9,12 @@ public class Flight {
     private int TRIP_PRICE;
 
     public Flight(String NUMBER,
-                  String DEPARTURE_AIRPORT,
-                  String ARRIVAL_AIRPORT,
-                  String DEPARTURE_TIME,
-                  String ARRIVAL_TIME,
-                  int TRIP_PRICE) {
+            String DEPARTURE_AIRPORT,
+            String ARRIVAL_AIRPORT,
+            String DEPARTURE_TIME,
+            String ARRIVAL_TIME,
+            int TRIP_PRICE) {
+
 
         this.NUMBER = NUMBER;
         this.DEPARTURE_AIRPORT = DEPARTURE_AIRPORT;

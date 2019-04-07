@@ -1,4 +1,7 @@
 package sample;
+import leit.flug.Schedule;
+import leit.flug.ScheduledFlight;
+import leit.flug.Flight;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
