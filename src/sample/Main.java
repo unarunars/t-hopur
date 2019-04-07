@@ -59,18 +59,22 @@ public class Main extends Application {
             System.out.println(singleHotel.getName());
             System.out.println(hotel.getRoomsInHotel(singleHotel.getHotelID()).get(0));
         }
-    }
 
-        /*
-        ArrayList north = hotel.hotelSearch("North region", 0, 100000);
-        ArrayList west = hotel.hotelSearch("West region", 0, 100000);
-        ArrayList south = hotel.hotelSearch("South region", 0, 100000);
-        ArrayList east = hotel.hotelSearch("East region", 0, 100000);
-        ArrayList rvk = hotel.hotelSearch("Capital area", 0, 100000);
-        */
+        hopurd.main.API.initDB();
+
+        ArrayList bookings = hopurd.main.API.getAllBookings();
+        ArrayList daytrips = hopurd.main.API.getAllTrips();
+        for (int i = 0; i<bookings.size();i++) {
+            System.out.println(bookings.get(i));
+        }
+        for (int i = 0; i<daytrips.size();i++) {
+            System.out.println(daytrips.get(i));
+        }
+    }
 
     public static void main(String[] args) {
 
+        //packages1();
         launch(args);
     }
 

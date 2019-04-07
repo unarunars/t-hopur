@@ -27138,6 +27138,20 @@
               "FlightClass":1,
               "Luggage":1,
               "Name":"Molly Fish"
+            },
+            {
+              "SpecialNeeds":false,
+              "Seat":"A0",
+              "FlightClass":1,
+              "Luggage":1,
+              "Name":"Frank Bologna"
+            },
+            {
+              "SpecialNeeds":false,
+              "Seat":"C0",
+              "FlightClass":1,
+              "Luggage":1,
+              "Name":"Molly Fish"
             }
           ],
           "RowLength":4,
