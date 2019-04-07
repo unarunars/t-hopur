@@ -4,18 +4,21 @@ import java.util.ArrayList;
 
 public class Package {
     String name;
+    String departureDestination;
     String destination;
     String event;
     String hotel;
-    ArrayList<String> flightDate = new ArrayList<String>();
-    ArrayList<String> eventDate = new ArrayList<String>();
-    ArrayList<String> hotelDate = new ArrayList<String>();
     int flightSeats;
     int hotelRooms;
     int eventSeats;
 
     public void setName(String currName) { name = currName; }
     public String getName() { return name; }
+
+    public void setDepartureDestination(String place) {
+        departureDestination = place;
+    }
+    public String getDepartureDestination() { return departureDestination; }
 
     public void setDestination(String place){
         destination = place;
@@ -37,60 +40,5 @@ public class Package {
     public String getHotel(){
         return hotel;
     }
-
-    public void setFlightDate(String date){
-        flightDate.add(date);
-    }
-    public ArrayList<String> getFlightDate(){
-        return flightDate;
-    }
-
-    public void setHotelDate(String date){
-        hotelDate.add(date);
-    }
-    public ArrayList<String> getHotelDate(){
-        return hotelDate;
-    }
-
-    public void setEventDate(String date){
-        eventDate.add(date);
-    }
-    public ArrayList<String> getEventDate(){
-        return eventDate;
-    }
-
-    public void setFlightSeats(int n){
-        flightSeats = n;
-    }
-    public int getFlightSeats(){
-        return flightSeats;
-    }
-
-    public void setHotelRooms(int n){
-        hotelRooms = n;
-    }
-    public int getHotelRooms(){
-        return hotelRooms;
-    }
-
-    public void setEventSeats(int n){
-        eventSeats = n;
-    }
-    public int getEventSeats(){
-        return eventSeats;
-    }
-
-    public void removeFlightSeats(int n) {
-        int flightSize = flightDate.size();
-        flightSeats = flightSeats-n;
-    }
-    public void removeHotelSeats(int n) {
-        int hotelSize = hotelDate.size();
-        hotelRooms = hotelRooms-n;
-    }
-    public void removeEventSeats(int n) {
-        int eventSize = eventDate.size();
-        eventSeats = eventSeats-n;
-    }
-
+    
 }
