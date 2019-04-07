@@ -3,6 +3,7 @@ package sample;
 import java.util.ArrayList;
 
 public class Package {
+    String name;
     String destination;
     String event;
     String hotel;
@@ -12,6 +13,9 @@ public class Package {
     int flightSeats;
     int hotelRooms;
     int eventSeats;
+
+    public void setName(String currName) { name = currName; }
+    public String getName() { return name; }
 
     public void setDestination(String place){
         destination = place;
