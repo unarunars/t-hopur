@@ -30,7 +30,7 @@ public class FlugController implements Initializable {
         ArrayList flights = fetch.getFlightInfo();
         String r = "";
         for(int i = 0; i < flights.size(); i++){
-            String a = flights.get(i) + " \n ";
+            String a =  flights.get(i) + " \n ";
             r += a;
             if ( (i+1) % 4 == 0){
                 r += "\n";
