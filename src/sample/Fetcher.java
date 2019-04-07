@@ -116,8 +116,8 @@ public class Fetcher {
             packageInfo.add(currPackage.getName());
             packageInfo.add(currPackage.getDepartureDestination());
             packageInfo.add(currPackage.getDestination());
-            packageInfo.add(currPackage.getHotel());
-            packageInfo.add(currPackage.getEvent());
+            packageInfo.add(currPackage.getHotel().getName());
+            packageInfo.add(currPackage.getEvent().getName());
             packageInfo.add(currPackage.getPrice(14));
         }
         return packageInfo;
