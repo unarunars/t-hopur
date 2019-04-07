@@ -9,11 +9,12 @@ public class Flight {
     private int TRIP_PRICE;
 
     public Flight(String NUMBER,
-                  String DEPARTURE_AIRPORT,
-                  String ARRIVAL_AIRPORT,
-                  String DEPARTURE_TIME,
-                  String ARRIVAL_TIME,
-                  int TRIP_PRICE) {
+            String DEPARTURE_AIRPORT,
+            String ARRIVAL_AIRPORT,
+            String DEPARTURE_TIME,
+            String ARRIVAL_TIME,
+            int TRIP_PRICE) {
+
 
         this.NUMBER = NUMBER;
         this.DEPARTURE_AIRPORT = DEPARTURE_AIRPORT;
@@ -22,30 +23,29 @@ public class Flight {
         this.DEPARTURE_TIME = DEPARTURE_TIME;
         this.ARRIVAL_TIME = ARRIVAL_TIME;
         this.TRIP_PRICE = TRIP_PRICE;
-
     }
 
-    String getNumber() {
+    public String getNumber() {
         return NUMBER;
     }
 
-    String getDepartureAirport() {
+    public String getDepartureAirport() {
         return DEPARTURE_AIRPORT;
     }
 
-    String getArrivalAirport() {
+    public String getArrivalAirport() {
         return ARRIVAL_AIRPORT;
     }
 
-    String getDepartureTime() {
+    public String getDepartureTime() {
         return DEPARTURE_TIME;
     }
 
-    String getArrivalTime() {
+    public String getArrivalTime() {
         return ARRIVAL_TIME;
     }
 
-    int getTripPrice() {
+    public int getTripPrice() {
         return TRIP_PRICE;
     }
 

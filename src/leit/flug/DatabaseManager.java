@@ -46,6 +46,7 @@ public class DatabaseManager {
                 flightList.add(flight);
             }
 
+
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

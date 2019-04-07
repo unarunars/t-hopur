@@ -2,6 +2,7 @@ package sample;
 
 import leit.flug.Schedule;
 import leit.flug.ScheduledFlight;
+import leit.flug.DatabaseManager;
 import leit.flug.Flight;
 import leit.hotel.HotelsDAO;
 import leit.hotel.Hotel;
@@ -41,13 +42,11 @@ public class Fetcher {
     }
 
     public ArrayList getAllFlights() {
-        Schedule schedule = new Schedule();
-        ScheduledFlight[] flights = schedule.getAllFlights();
+        DatabaseManager dm = new DatabaseManager();
+        Flight[] flights = dm.getFlights();
         ArrayList realFlights = new ArrayList<>();
-        Flight currFlight = null;
-        for (int i = 0; i< flights.length; i++) {
-            currFlight = (Flight) flights[i].getFlight();
-            realFlights.add(currFlight);
+        for (int i = 0; i<flights.length; i++) {
+            realFlights.add(flights[i]);
         }
         return realFlights;
     }
