@@ -14,6 +14,7 @@ public class Schedule {
         dm.updateScheduledFlight(date, number, booking);
     }
 
+
     public ScheduledFlight[] getAllFlights() {
         DatabaseManager dm = new DatabaseManager();
         ScheduledFlight[] scheduledFlights = dm.getScheduledFlights();
@@ -25,7 +26,7 @@ public class Schedule {
         DatabaseManager dm = new DatabaseManager();
         ScheduledFlight[] scheduledFlights = dm.getScheduledFlights();
 
-        System.out.println(scheduledFlights[0]);
+        //System.out.println(scheduledFlights[0]);
 
         List<ScheduledFlight> sFList = new ArrayList<>();
 
@@ -56,20 +57,17 @@ public class Schedule {
         return filteredFlights;
     }
 
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         Schedule schedule = new Schedule();
+        ScheduledFlight[] flights = schedule.searchFlights("BIU",
+                                                                  "AEY",
+                                                                  "2019-1-12");
+        ScheduledFlight flight = flights[0];
         ScheduledFlight[] flights = schedule.getAllFlights();
         Flight currFlight;
         for (int i = 0; i<flights.length; i++) {
             currFlight = flights[i].getFlight();
             System.out.println(currFlight.getArrivalAirport());
         }
-        /*
-        Booking booking = new Booking();
-        booking.setFlight(flight);
-        booking.AddPassenger("Frank Bologna", false, 1, 1, "A0");
-        booking.AddPassenger("Molly Fish", false, 1, 1, "C0");
-        schedule.updateSchedule(booking);
-        */
-    }
+    }*/
 }

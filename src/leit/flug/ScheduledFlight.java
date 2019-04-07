@@ -62,7 +62,7 @@ public class ScheduledFlight {
         return count;
     }
 
-    String getScheduledDate(){
+    public String getScheduledDate(){
         return scheduledDate;
     }
 
@@ -70,13 +70,4 @@ public class ScheduledFlight {
         return flight;
     }
 
-    /*
-    @Override
-    public String toString(){
-        return "Date:" + getScheduledDate() + "\n" +
-               "DEP: " + getFlight().getDepartureAirport() + " " + getFlight().getDepartureTime() + "\n" +
-               "ARR: " + getFlight().getArrivalAirport() + " " + getFlight().getArrivalTime() +  "\n" +
-               "Price: " + getFlight().getTripPrice();
-    }
-    */
 }
