@@ -35,10 +35,12 @@ public class Room {
         return roomInfo;
     }
 
+
     @Override
     public String toString() {
         return "Room " + roomNr + " - " + price + " ISK per night - " + guestNumber + " guests";
     }
+
 
     @Override
     public boolean equals(Object o) {

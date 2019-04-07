@@ -43,6 +43,7 @@ public class Main {
             singleHotel = (Hotel) hotels.get(i);
             //Hérna geturu bætt við fetch t.d. singleHotel.getPrice()
             System.out.println(singleHotel.getName());
+            System.out.println(hotel.getRoomsInHotel(singleHotel.getHotelID()).get(0));
         }
 
         /*
