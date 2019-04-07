@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <MenuBar prefHeight="36.0" prefWidth="775.0" style="-fx-background-color: mediumorchid;">
         <menus>
@@ -63,9 +63,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="hotelTakki" mnemonicParsing="false" prefHeight="131.0" prefWidth="137.0" text="Hótel" />
-            <Button mnemonicParsing="false" prefHeight="131.0" prefWidth="137.0" text="Pakka" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="131.0" prefWidth="137.0" text="Flug" GridPane.columnIndex="2" />
+            <Button fx:id="hotelTakki" mnemonicParsing="false" onAction="#hotelHandler" prefHeight="131.0" prefWidth="137.0" text="Hótel" />
+            <Button fx:id="pakkiTakki" mnemonicParsing="false" onAction="#pakkiHandler" prefHeight="131.0" prefWidth="137.0" text="Pakka" GridPane.columnIndex="1" />
+            <Button fx:id="flugTakki" mnemonicParsing="false" onAction="#flugHandler" prefHeight="131.0" prefWidth="137.0" text="Flug" GridPane.columnIndex="2" />
          </children>
       </GridPane>
    </children>
