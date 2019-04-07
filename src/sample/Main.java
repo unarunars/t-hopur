@@ -80,10 +80,23 @@ public class Main extends Application {
         }
     }
 
+    public static void packages2(){
+        Fetcher fetch = new Fetcher();
+
+        ArrayList flights = fetch.getAllFlights();
+        ArrayList hotels = fetch.getAllHotels();
+        ArrayList trips = fetch.getAllTrips();
+
+        System.out.println(flights);
+        System.out.println(hotels);
+        System.out.println(trips);
+    }
+
     public static void main(String[] args) {
 
+        packages2();
         //packages1();
-        launch(args);
+        //launch(args);
     }
 
 
