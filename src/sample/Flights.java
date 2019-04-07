@@ -24,14 +24,14 @@ public class Flights {
         //Flight realflight = hello[0].getFlight();
         //System.out.println(realflight.getTripPrice());
 
-        Flight[] flights = hl.getFlights();
+       // Flight[] flights = hl.getFlights();
 
         //System.out.println(flights[30]);
 
 
-        ScheduledFlight[] helleo = lol.searchFlightss();
+       // ScheduledFlight[] helleo = lol.searchFlightss();
 
-        ScheduledFlight[] hlll = hl.getScheduledFlights();
+       // ScheduledFlight[] hlll = hl.getScheduledFlights();
 
         //int i;
         //for (i = 0; i < flights.length; i++) {
@@ -62,7 +62,7 @@ public class Flights {
     }
     public static void main(String[] args) {
 
-        Flights.AllFlights();
-        Flights.AllPrufa();
+       // Flights.AllFlights();
+       // Flights.AllPrufa();
     }
 }

@@ -26,23 +26,23 @@ public class Flight {
 
     }
 
-    String getNumber() {
+    public String getNumber() {
         return NUMBER;
     }
 
-    String getDepartureAirport() {
+    public String getDepartureAirport() {
         return DEPARTURE_AIRPORT;
     }
 
-    String getArrivalAirport() {
+    public String getArrivalAirport() {
         return ARRIVAL_AIRPORT;
     }
 
-    String getDepartureTime() {
+    public String getDepartureTime() {
         return DEPARTURE_TIME;
     }
 
-    String getArrivalTime() {
+    public String getArrivalTime() {
         return ARRIVAL_TIME;
     }
 

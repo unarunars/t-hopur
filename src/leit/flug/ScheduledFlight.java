@@ -69,5 +69,5 @@ public class ScheduledFlight {
     public Flight getFlight() {
         return flight;
     }
-    
+
 }

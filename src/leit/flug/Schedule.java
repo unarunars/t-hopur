@@ -57,7 +57,7 @@ public class Schedule {
         return filteredFlights;
     }
 
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         Schedule schedule = new Schedule();
         ScheduledFlight[] flights = schedule.searchFlights("BIU",
                                                                   "AEY",
@@ -69,12 +69,5 @@ public class Schedule {
             currFlight = flights[i].getFlight();
             System.out.println(currFlight.getArrivalAirport());
         }
-        /*
-        Booking booking = new Booking();
-        booking.setFlight(flight);
-        booking.AddPassenger("Frank Bologna", false, 1, 1, "A0");
-        booking.AddPassenger("Molly Fish", false, 1, 1, "C0");
-        schedule.updateSchedule(booking);
-        */
-    }
+    }*/
 }

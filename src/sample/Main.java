@@ -86,6 +86,13 @@ public class Main extends Application {
         ArrayList flights = fetch.getAllFlights();
         ArrayList hotels = fetch.getAllHotels();
         ArrayList trips = fetch.getAllTrips();
+        Flight currentFlight = null;
+
+        for(int i = 0; i < flights.size(); i++) {
+            currentFlight = (Flight) flights.get(i);
+            System.out.println(currentFlight.getNumber());
+
+        }
 
         System.out.println(flights);
         System.out.println(hotels);
