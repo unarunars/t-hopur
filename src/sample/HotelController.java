@@ -12,20 +12,35 @@ import javafx.scene.control.Label;
 
 import javax.swing.text.html.ListView;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HotelController implements Initializable {
 
+
     @FXML
-    private Label jRandomTala;
+    private Label hotelInfo;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        showHotels();
     }
-    @FXML
-    public void showHotels(javafx.event.ActionEvent actionEvent){
-        jRandomTala.setText("hæ");
+    public void showHotels(){
+
+        Fetcher fetch = new Fetcher();
+        ArrayList hotels = fetch.getHotelInfo();
+        String r = "";
+        for(int i = 0; i < hotels.size(); i++){
+            String a = hotels.get(i) + " \n ";
+            r += a;
+
+            if ( (i+1) % 3 == 0){
+                r += "\n";
+            }
+
+        }
+        System.out.println(r);
+        hotelInfo.setText(r);
     }
 
     @FXML
