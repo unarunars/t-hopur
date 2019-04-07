@@ -15,9 +15,17 @@ public class Package {
     public void setDepartureDestination(String place) { departureDestination = place; }
     public String getDepartureDestination() { return departureDestination; }
 
+    public void setDepartureDestinationID(String place) { departureDestinationID = place; }
+    public String getDepartureDestinationID() { return departureDestinationID; }
+
     public void setDestination(String place){ destination = place; }
     public String getDestination(){
         return destination;
+    }
+
+    public void setDestinationID(String place){ destinationID = place; }
+    public String getDestinationID(){
+        return destinationID;
     }
 
     public void setEvent(String thing){

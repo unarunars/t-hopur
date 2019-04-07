@@ -3,6 +3,7 @@ package sample;
 import java.util.ArrayList;
 
 public class Booking {
+    /*
 
     public void bookTrip(int touristCount, Package soldPackage) {
         removeFlights(touristCount, soldPackage);
@@ -35,5 +36,7 @@ public class Booking {
             System.out.println("UPDATE events SET eventSeats = " + soldPackage.getEventSeats());
         }
         return true;
+
     }
+    */
 }
