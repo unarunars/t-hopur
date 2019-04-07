@@ -51,6 +51,20 @@ public class Fetcher {
         return realFlights;
     }
 
+    public ArrayList getFlightInfo() {
+        ArrayList flights = getAllFlights();
+        ArrayList flightInfo = new ArrayList();
+        Flight currFlight;
+        for (int i = 0; i<flights.size();i++) {
+            currFlight = (Flight) flights.get(i);
+            flightInfo.add(currFlight.getNumber());
+            flightInfo.add(currFlight.getDepartureAirport());
+            flightInfo.add(currFlight.getArrivalAirport());
+            flightInfo.add(currFlight.getTripPrice());
+        }
+        return flightInfo;
+    }
+
     public ArrayList getAllTrips() {
         hopurd.main.API.initDB();
         ArrayList trips = hopurd.main.API.getAllTrips();
