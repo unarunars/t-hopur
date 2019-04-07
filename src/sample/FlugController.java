@@ -27,12 +27,14 @@ public class FlugController implements Initializable {
     }
     public void showFlights(){
         Fetcher fetch = new Fetcher();
-        ArrayList flights = fetch.getAllFlights();
+        ArrayList flights = fetch.getFlightInfo();
         String r = "";
         for(int i = 0; i < flights.size(); i++){
-            String a = flights.get(i) + " \n ";
+            String a =  flights.get(i) + " \n ";
             r += a;
-
+            if ( (i+1) % 4 == 0){
+                r += "\n";
+            }
         }
         System.out.println(r);
         flugInfo.setText(r);
