@@ -5,9 +5,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -15,7 +12,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+
+<AnchorPane prefHeight="560.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <MenuBar prefHeight="36.0" prefWidth="775.0" style="-fx-background-color: mediumorchid;">
         <menus>
@@ -36,24 +34,16 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox layoutY="36.0" prefHeight="62.0" prefWidth="775.0" style="-fx-background-color: mediumorchid;">
+      <HBox layoutY="36.0" prefHeight="100.0" prefWidth="775.0" style="-fx-background-color: mediumorchid;">
          <children>
-            <ImageView fitHeight="97.0" fitWidth="93.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-               <image>
-                  <Image url="@../../../../../Desktop/luminati.jpg" />
-               </image>
-               <effect>
-                  <Glow />
-               </effect>
-            </ImageView>
-            <Label prefHeight="81.0" prefWidth="690.0" text="       Nafn á appinu" textAlignment="RIGHT">
+            <Label prefHeight="110.0" prefWidth="471.0" text="Nafn á appinu, í miðju">
                <font>
                   <Font name="Century Gothic" size="44.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <GridPane layoutX="139.0" layoutY="204.0" prefHeight="152.0" prefWidth="497.0">
+      <GridPane layoutX="76.0" layoutY="246.0" prefHeight="193.0" prefWidth="623.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -63,9 +53,9 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="hotelTakki" mnemonicParsing="false" onAction="#hotelHandler" prefHeight="131.0" prefWidth="137.0" text="Hótel" />
-            <Button fx:id="pakkiTakki" mnemonicParsing="false" onAction="#pakkiHandler" prefHeight="131.0" prefWidth="137.0" text="Pakka" GridPane.columnIndex="1" />
-            <Button fx:id="flugTakki" mnemonicParsing="false" onAction="#flugHandler" prefHeight="131.0" prefWidth="137.0" text="Flug" GridPane.columnIndex="2" />
+            <Button fx:id="hotelTakki" mnemonicParsing="false" onAction="#hotelHandler" prefHeight="168.0" prefWidth="181.0" text="Hótel" />
+            <Button fx:id="pakkiTakki" mnemonicParsing="false" onAction="#pakkiHandler" prefHeight="168.0" prefWidth="181.0" text="Pakkar" GridPane.columnIndex="1" />
+            <Button fx:id="flugTakki" mnemonicParsing="false" onAction="#flugHandler" prefHeight="168.0" prefWidth="181.0" text="Áfangastaðir" GridPane.columnIndex="2" />
          </children>
       </GridPane>
    </children>

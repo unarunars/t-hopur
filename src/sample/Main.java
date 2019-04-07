@@ -16,12 +16,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("hotel.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("index.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
 
-    public static void packages1(){
+    public static void packages1() {
         Package myPackage = new Package();
         myPackage.setDestination("Akureyri");
         myPackage.setFlightDate("01.06.18");
@@ -52,12 +53,13 @@ public class Main extends Application {
         HotelsDAO hotel = new HotelsDAO();
         ArrayList hotels = hotel.getAllHotels();
         Hotel singleHotel;
-        for (int i = 0; i< hotels.size(); i++) {
+        for (int i = 0; i < hotels.size(); i++) {
             singleHotel = (Hotel) hotels.get(i);
             //Hérna geturu bætt við fetch t.d. singleHotel.getPrice()
             System.out.println(singleHotel.getName());
             System.out.println(hotel.getRoomsInHotel(singleHotel.getHotelID()).get(0));
         }
+    }
 
         /*
         ArrayList north = hotel.hotelSearch("North region", 0, 100000);
@@ -69,7 +71,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-       // launch(args);
+        launch(args);
     }
 
 

@@ -3,7 +3,6 @@ package leit.flug;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 public class Schedule {
 
     public void updateSchedule(Booking booking){

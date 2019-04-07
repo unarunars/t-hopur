@@ -25,9 +25,11 @@ public class Controller implements Initializable {
     @FXML
     private Button pakkiTakki;
     @FXML
-    private Button flugPakki;
+    private Button flugTakki;
 
      private HotelController hotel;
+     private FlugController flug;
+     private PakkarController pakki;
 
 
 
@@ -45,6 +47,8 @@ public class Controller implements Initializable {
             System.out.println("villa: " + e.getMessage());
         }
     }
+
+    
     @FXML
     private void pakkiHandler(javafx.event.ActionEvent actionEvent){
         try {
@@ -77,7 +81,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         hotelTakki.setTooltip(new Tooltip("hotel"));
         pakkiTakki.setTooltip(new Tooltip("pakkar"));
-        flugPakki.setTooltip(new Tooltip("flug"));
+        flugTakki.setTooltip(new Tooltip("flug"));
 
     }
 
