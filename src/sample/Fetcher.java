@@ -1,11 +1,13 @@
 package sample;
 
+import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
 import leit.flug.Schedule;
 import leit.flug.ScheduledFlight;
 import leit.flug.DatabaseManager;
 import leit.flug.Flight;
 import leit.hotel.HotelsDAO;
 import leit.hotel.Hotel;
+import leit.hotel.Room;
 
 import java.util.ArrayList;
 
@@ -65,6 +67,33 @@ public class Fetcher {
         return flightInfo;
     }
 
+    public int getFlightPrice(String destID, String departID) {
+        int price = 0;
+        ArrayList flights = getAllFlights();
+        Flight currFlight = null;
+        for (int i = 0; i<flights.size(); i++) {
+            currFlight = (Flight) flights.get(i);
+            if (currFlight.getArrivalAirport() == destID) {
+                if (currFlight.getDepartureAirport() == departID) {
+                    break;
+                }
+            }
+        }
+        price += currFlight.getTripPrice();
+        return price;
+    }
+
+    public int getHotelPrice(Hotel hotel) {
+        ArrayList rooms = hotel.getRooms();
+        Room room = null;
+        int price = 0;
+        for (int i = 0; i<rooms.size();i++) {
+            room = (Room) rooms.get(i);
+            price += room.getPrice();
+        }
+        return price;
+    }
+
     public ArrayList getAllTrips() {
         hopurd.main.API.initDB();
         ArrayList trips = hopurd.main.API.getAllTrips();
@@ -89,6 +118,7 @@ public class Fetcher {
             packageInfo.add(currPackage.getDestination());
             packageInfo.add(currPackage.getHotel());
             packageInfo.add(currPackage.getEvent());
+            packageInfo.add(currPackage.getPrice(14));
         }
         return packageInfo;
     }
