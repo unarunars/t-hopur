@@ -110,8 +110,9 @@ public class Fetcher {
     public ArrayList getPackageInfo() {
         ArrayList packages = getAllPackages();
         ArrayList packageInfo = new ArrayList();
-        Package currPackage;
+        Package currPackage = null;
         for (int i = 0; i<packages.size(); i++) {
+            System.out.println(i);
             currPackage = (Package) packages.get(i);
             packageInfo.add(currPackage.getName());
             packageInfo.add(currPackage.getDepartureDestination());

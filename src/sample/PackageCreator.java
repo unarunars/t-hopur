@@ -6,14 +6,14 @@ import leit.hotel.Hotel;
 import java.util.ArrayList;
 
 public class PackageCreator {
+    Fetcher fetch = new Fetcher();
+    ArrayList hotels = fetch.getAllHotels();
+    ArrayList trips = fetch.getAllTrips();
 
     public Package pakkiEitt(){
-        Fetcher fetch = new Fetcher();
-        ArrayList hotels = fetch.getAllHotels();
-        ArrayList trips = fetch.getAllTrips();
+        Package myPackage = new Package();
         Hotel hotel = (Hotel) hotels.get(2);
         Trip trip = (Trip) trips.get(4);
-        Package myPackage = new Package();
         myPackage.setName("Fjörpakkinn");
         myPackage.setDepartureDestination("Bíldudalur");
         myPackage.setDestination("Akureyri");
@@ -25,9 +25,6 @@ public class PackageCreator {
     }
     public Package pakkiTvo(){
         Package myPackage = new Package();
-        Fetcher fetch = new Fetcher();
-        ArrayList hotels = fetch.getAllHotels();
-        ArrayList trips = fetch.getAllTrips();
         Hotel hotel = (Hotel) hotels.get(3);
         Trip trip = (Trip) trips.get(5);
         myPackage.setName("Klikkpakkinn");
@@ -40,12 +37,9 @@ public class PackageCreator {
         return myPackage;
     }
     public Package pakkiThrju(){
-        Fetcher fetch = new Fetcher();
-        ArrayList hotels = fetch.getAllHotels();
-        ArrayList trips = fetch.getAllTrips();
+        Package myPackage = new Package();
         Hotel hotel = (Hotel) hotels.get(4);
         Trip trip = (Trip) trips.get(2);
-        Package myPackage = new Package();
         myPackage.setName("Eyjabailpakkinn");
         myPackage.setDepartureDestination("Vestmanneyjar");
         myPackage.setDestination("Hornafjörður");
@@ -56,12 +50,9 @@ public class PackageCreator {
         return myPackage;
     }
     public Package pakkiFjogur() {
-        Fetcher fetch = new Fetcher();
-        ArrayList hotels = fetch.getAllHotels();
-        ArrayList trips = fetch.getAllTrips();
+        Package myPackage = new Package();
         Hotel hotel = (Hotel) hotels.get(1);
         Trip trip = (Trip) trips.get(1);
-        Package myPackage = new Package();
         myPackage.setName("Gjöróðipakkinn");
         myPackage.setDepartureDestination("Egilsstaðir");
         myPackage.setDestination("Árnanes");
@@ -72,12 +63,9 @@ public class PackageCreator {
         return myPackage;
     }
     public Package pakkiFimm() {
-        Fetcher fetch = new Fetcher();
-        ArrayList hotels = fetch.getAllHotels();
-        ArrayList trips = fetch.getAllTrips();
+        Package myPackage = new Package();
         Hotel hotel = (Hotel) hotels.get(0);
         Trip trip = (Trip) trips.get(8);
-        Package myPackage = new Package();
         myPackage.setName("Höfuðsvæðisbeilpakkinn");
         myPackage.setDepartureDestination("Reykjavík");
         myPackage.setDestination("Árnanes");
