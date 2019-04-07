@@ -70,4 +70,26 @@ public class Fetcher {
         ArrayList trips = hopurd.main.API.getAllTrips();
         return trips;
     }
+
+    public ArrayList getAllPackages() {
+        PackageCreator creator = new PackageCreator();
+        ArrayList packages = creator.pakkaSafn();
+
+        return packages;
+    }
+
+    public ArrayList getPackageInfo() {
+        ArrayList packages = getAllPackages();
+        ArrayList packageInfo = new ArrayList();
+        Package currPackage;
+        for (int i = 0; i<packages.size(); i++) {
+            currPackage = (Package) packages.get(i);
+            packageInfo.add(currPackage.getName());
+            packageInfo.add(currPackage.getDepartureDestination());
+            packageInfo.add(currPackage.getDestination());
+            packageInfo.add(currPackage.getHotel());
+            packageInfo.add(currPackage.getEvent());
+        }
+        return packageInfo;
+    }
 }

@@ -4,10 +4,13 @@ import java.util.ArrayList;
 
 public class Booking {
     /*
-    public void bookTrip(int touristCount, Package soldPackage) {
-        removeFlights(touristCount, soldPackage);
-        removeHotels(touristCount, soldPackage);
-        removeEvents(touristCount, soldPackage);
+
+    public boolean bookTrip(int touristCount, Package soldPackage) {
+        ScheduledFlight[] flights = schedule.searchFlights("BIU",
+                "AEY",
+                "2019-1-12");
+
+        return true;
     }
 
     public void removeFlights(int touristCount, Package soldPackage) {
@@ -38,4 +41,5 @@ public class Booking {
 
     }
     */
+
 }
