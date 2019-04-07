@@ -1,13 +1,16 @@
 package sample;
 
+import hopurd.models.Trip;
+import leit.hotel.Hotel;
+
 public class Package {
     String name;
     String departureDestination;
     String departureDestinationID;
     String destination;
     String destinationID;
-    String event;
-    String hotel;
+    Trip event;
+    Hotel hotel;
 
     public void setName(String currName) { name = currName; }
     public String getName() { return name; }
@@ -28,18 +31,28 @@ public class Package {
         return destinationID;
     }
 
-    public void setEvent(String thing){
+    public void setEvent(Trip thing){
         event = thing;
     }
-    public String getEvent(){
+    public Trip getEvent(){
         return event;
     }
 
-    public void setHotel(String name){
+    public void setHotel(Hotel name){
         hotel = name;
     }
-    public String getHotel(){
+    public Hotel getHotel(){
         return hotel;
     }
 
+    public int[] getPrice(int days) {
+        int[] price = new int[2];
+        int currPrice = 0;
+        Fetcher fetch = new Fetcher();
+        currPrice += fetch.getFlightPrice(departureDestinationID, destinationID);
+        currPrice += event.getPrice();
+        price[0] = currPrice;
+        price[1] = currPrice + fetch.getHotelPrice(hotel)*days;
+        return price;
+    }
 }

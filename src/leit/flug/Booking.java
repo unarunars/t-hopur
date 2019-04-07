@@ -7,12 +7,12 @@ public class Booking {
     private Passenger[] passengers;
     private ScheduledFlight flight;
 
-    Booking(){
+    public Booking(){
         //We assume 1 passenger for 1 booking, any further can be added later
         passengers = new Passenger[1];
     }
 
-    void setFlight(ScheduledFlight flight){
+    public void setFlight(ScheduledFlight flight){
         this.flight = flight;
         this.number = flight.getFlight().getNumber();
         this.price = flight.getFlight().getTripPrice();

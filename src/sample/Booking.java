@@ -1,45 +1,71 @@
 package sample;
 
+import hopurd.models.Trip;
+import leit.flug.Schedule;
+import leit.flug.ScheduledFlight;
+import leit.hotel.Hotel;
+import leit.hotel.Room;
+
 import java.util.ArrayList;
 
 public class Booking {
-    /*
 
-    public boolean bookTrip(int touristCount, Package soldPackage) {
-        ScheduledFlight[] flights = schedule.searchFlights("BIU",
-                "AEY",
-                "2019-1-12");
+    public boolean bookPackage(String date, int touristCount, Package soldPackage) {
+        //FlugCheck
+        Schedule schedule = new Schedule();
+        ScheduledFlight[] flights = schedule.searchFlights( soldPackage.getDepartureDestinationID(),
+                                                            soldPackage.getDestinationID(),
+                                                            date);
+        if (flights == null) return false;
 
+        //HotelCheck
+        boolean confirmHotel = checkHotel(touristCount, soldPackage.getHotel());
+
+        if (!confirmHotel) return false;
+
+        //TripCheck
+
+
+        bookFlight(flights[0], date, touristCount, schedule);
         return true;
     }
 
-    public void removeFlights(int touristCount, Package soldPackage) {
-        soldPackage.removeFlightSeats(touristCount);
+    public void bookFlight(ScheduledFlight flight, String date, int touristCount, Schedule schedule) {
+        leit.flug.Booking booking = new leit.flug.Booking();
+        booking.setFlight(flight);
+        for (int i = 0; i<touristCount; i++) {
+            booking.AddPassenger("Pakkaflakk kúnni", false, 1, 1, "A" + i);
+        }
+        schedule.updateSchedule(booking);
     }
-    public void removeHotels(int touristCount, Package soldPackage) {
-        soldPackage.removeHotelSeats(touristCount);
+
+    public boolean checkHotel(int touristCount, Hotel hotelName) {
+        Fetcher fetch = new Fetcher();
+        ArrayList hotels = fetch.getAllHotels();
+        Hotel currHotel = null;
+        for (int i = 0; i<hotels.size(); i++) {
+            currHotel = (Hotel) hotels.get(i);
+            if (currHotel.getName() == hotelName.getName()) {
+                return checkRooms(touristCount, currHotel.getRooms());
+            }
+        }
+
+        return false;
     }
+    public boolean checkRooms(int touristCount, ArrayList rooms) {
+        Room currRoom = null;
+        int beds = 0;
+        for (int i = 0; i<rooms.size(); i++) {
+            currRoom = (Room) rooms.get(i);
+            beds += currRoom.getGuests();
+        }
+
+        return (beds >= touristCount);
+    }
+
     public void removeEvents(int touristCount, Package soldPackage) {
-        soldPackage.removeEventSeats(touristCount);
+        //soldPackage.removeEventSeats(touristCount);
     }
 
-    public boolean updateSeats(int touristCount, Package soldPackage) {
-        if (soldPackage == null) return false;
-        ArrayList<String> flightDate = soldPackage.getFlightDate();
-        ArrayList<String> hotelDate = soldPackage.getHotelDate();
-        ArrayList<String> eventDate = soldPackage.getEventDate();
-        for (int i = 0; i < flightDate.size(); i++) {
-            System.out.println("UPDATE flights SET flightSeats = " + soldPackage.getFlightSeats());
-        }
-        for (int i = 0; i < hotelDate.size(); i++) {
-            System.out.println("UPDATE hotels SET hotelRooms = " + soldPackage.getHotelRooms());
-        }
-        for (int i = 0; i < eventDate.size(); i++) {
-            System.out.println("UPDATE events SET eventSeats = " + soldPackage.getEventSeats());
-        }
-        return true;
-
-    }
-    */
 
 }
