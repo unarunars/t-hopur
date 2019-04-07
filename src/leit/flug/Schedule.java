@@ -14,14 +14,15 @@ public class Schedule {
         dm.updateScheduledFlight(date, number, booking);
     }
 
-    public ScheduledFlight[] searchFlightss(){
+
+    public ScheduledFlight[] getAllFlights() {
         DatabaseManager dm = new DatabaseManager();
-        ScheduledFlight[] Allflights = dm.getScheduledFlights();
-        //System.out.println(Allflights[1].getFlight());
-        return Allflights;
+        ScheduledFlight[] scheduledFlights = dm.getScheduledFlights();
+        return scheduledFlights;
     }
 
-    public ScheduledFlight[] searchFlights(String departureAirport, String arrivalAirport, String date){
+
+        public ScheduledFlight[] searchFlights(String departureAirport, String arrivalAirport, String date){
         DatabaseManager dm = new DatabaseManager();
         ScheduledFlight[] scheduledFlights = dm.getScheduledFlights();
 
@@ -62,10 +63,18 @@ public class Schedule {
                                                                   "AEY",
                                                                   "2019-1-12");
         ScheduledFlight flight = flights[0];
+        ScheduledFlight[] flights = schedule.getAllFlights();
+        Flight currFlight;
+        for (int i = 0; i<flights.length; i++) {
+            currFlight = flights[i].getFlight();
+            System.out.println(currFlight.getArrivalAirport());
+        }
+        /*
         Booking booking = new Booking();
         booking.setFlight(flight);
         booking.AddPassenger("Frank Bologna", false, 1, 1, "A0");
         booking.AddPassenger("Molly Fish", false, 1, 1, "C0");
         schedule.updateSchedule(booking);
+        */
     }
 }
