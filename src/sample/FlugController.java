@@ -23,6 +23,7 @@ public class FlugController implements Initializable {
 
     }
 
+
     @FXML
     private void  tilBakaHandler(javafx.event.ActionEvent actionEvent){
         try {
