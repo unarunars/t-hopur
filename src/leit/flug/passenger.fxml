@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane fx:id="seatsGrid" layoutX="101.0" layoutY="84.0" prefHeight="184.0" prefWidth="94.0">
+         <children>
+            <Button mnemonicParsing="false" text="2B" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button layoutX="10.0" layoutY="12.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="36.0" text="1B" GridPane.columnIndex="1" />
+            <Button layoutX="57.0" layoutY="12.0" mnemonicParsing="false" text="2A" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" text="1A" />
+            <Button layoutX="10.0" layoutY="43.0" mnemonicParsing="false" text="3A" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" text="3C" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" text="4A" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="4B" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" text="5A" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" text="5B" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" text="6A" GridPane.rowIndex="5" />
+            <Button mnemonicParsing="false" text="6B" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Pane layoutX="195.0" layoutY="25.0" prefHeight="351.0" prefWidth="362.0">
+         <children>
+            <TextField fx:id="nameHandler" layoutX="146.0" layoutY="53.0" prefHeight="27.0" prefWidth="187.0" />
+            <Label layoutX="14.0" layoutY="58.0" text="Name of passenger:" />
+            <CheckBox fx:id="specNeedsHandler" layoutX="138.0" layoutY="109.0" mnemonicParsing="false" text="Special Needs" />
+            <ChoiceBox fx:id="flightClassHandler" layoutX="146.0" layoutY="176.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="extraluggHandler" layoutX="146.0" layoutY="229.0" prefWidth="150.0" />
+            <Label layoutX="61.0" layoutY="181.0" text="Flight Class:" />
+            <Label layoutX="39.0" layoutY="234.0" text="Extra luggage:" />
+            <Button fx:id="NextHandler" layoutX="274.0" layoutY="296.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="75.0" text="Next" />
+         </children>
+      </Pane>
+   </children>
+</Pane>

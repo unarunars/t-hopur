@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1059.0" prefWidth="406.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FlightController">
+   <children>
+      <DatePicker fx:id="dateHandler" layoutX="38.0" layoutY="131.0" />
+      <Label layoutX="38.0" layoutY="37.0" text="Departure Airport" />
+      <Label layoutX="214.0" layoutY="37.0" text="Arrival Airport" />
+      <Label layoutX="38.0" layoutY="114.0" text="Flight date:" />
+      <ChoiceBox fx:id="noPassHandler" layoutX="37.0" layoutY="200.0" prefWidth="150.0" />
+      <Label layoutX="37.0" layoutY="183.0" text="Number of passengers:" />
+      <Button fx:id="searchHandler" layoutX="240.0" layoutY="270.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="119.0" text="Search flights" />
+      <ChoiceBox fx:id="depHandler" layoutX="37.0" layoutY="54.0" prefHeight="27.0" prefWidth="136.0" />
+      <ComboBox fx:id="arrHandler" layoutX="214.0" layoutY="54.0" prefWidth="150.0" />
+      <ListView fx:id="flightListHandler" layoutX="12.0" layoutY="356.0" prefHeight="287.0" prefWidth="385.0" />
+   </children>
+</Pane>
