@@ -66,9 +66,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        packages2();
+        //packages2();
         //packages1();
-        //launch(args);
+        launch(args);
     }
 
 

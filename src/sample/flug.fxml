@@ -43,5 +43,10 @@
             </Label>
          </children></HBox>
       <Button fx:id="tilBaka" layoutX="352.0" layoutY="502.0" mnemonicParsing="false" onAction="#tilBakaHandler" text="Til Baka" />
+      <ScrollPane layoutX="82.0" layoutY="149.0" prefHeight="334.0" prefWidth="635.0">
+         <content>
+            <Label fx:id="flugInfo" prefHeight="331.0" prefWidth="635.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
