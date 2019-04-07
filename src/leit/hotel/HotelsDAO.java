@@ -68,6 +68,28 @@ public class HotelsDAO {
         return hotels;
     }
 
+
+    public ArrayList<Hotel> getAllHotels() {
+        ArrayList<Hotel> hotels = new ArrayList<>();
+
+        try {
+            stmt = conn.createStatement();
+            PreparedStatement p = conn.prepareStatement("SELECT Name, HotelID, Stars, ReviewTotal, minPrice, Address, Phone, HotelInfo FROM Hotel");
+
+            r = p.executeQuery();
+            // For each query result, a new hotel object is created and added to a list which is then returned.
+            while (r.next()) {
+                Hotel hotel = new Hotel(r.getString(1), r.getInt(2), r.getInt(3),
+                        r.getInt(4), r.getInt(5), r.getString(6), r.getString(7),
+                        r. getString(8));
+                hotels.add(hotel);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return hotels;
+    }
+
     /*
     * This function takes in a unique hotelID and uses an SQL query to return
     * a list of room objects matching the hotel
