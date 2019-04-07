@@ -66,10 +66,11 @@ public class ScheduledFlight {
         return scheduledDate;
     }
 
-    Flight getFlight() {
+    public Flight getFlight() {
         return flight;
     }
 
+    /*
     @Override
     public String toString(){
         return "Date:" + getScheduledDate() + "\n" +
@@ -77,4 +78,5 @@ public class ScheduledFlight {
                "ARR: " + getFlight().getArrivalAirport() + " " + getFlight().getArrivalTime() +  "\n" +
                "Price: " + getFlight().getTripPrice();
     }
+    */
 }
