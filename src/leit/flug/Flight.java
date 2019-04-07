@@ -1,6 +1,6 @@
 package leit.flug;
 
-class Flight {
+public class Flight {
     private String NUMBER;
     private String DEPARTURE_AIRPORT;
     private String ARRIVAL_AIRPORT;
@@ -8,7 +8,7 @@ class Flight {
     private String ARRIVAL_TIME;
     private int TRIP_PRICE;
 
-    Flight(String NUMBER,
+    public Flight(String NUMBER,
             String DEPARTURE_AIRPORT,
             String ARRIVAL_AIRPORT,
             String DEPARTURE_TIME,
@@ -45,7 +45,7 @@ class Flight {
         return ARRIVAL_TIME;
     }
 
-    int getTripPrice() {
+    public int getTripPrice() {
         return TRIP_PRICE;
     }
 
