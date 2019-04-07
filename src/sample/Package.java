@@ -40,5 +40,5 @@ public class Package {
     public String getHotel(){
         return hotel;
     }
-    
+
 }
