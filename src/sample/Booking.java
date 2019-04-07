@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Booking {
     /*
-
     public void bookTrip(int touristCount, Package soldPackage) {
         removeFlights(touristCount, soldPackage);
         removeHotels(touristCount, soldPackage);

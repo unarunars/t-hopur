@@ -57,10 +57,10 @@ public class Fetcher {
         Flight currFlight;
         for (int i = 0; i<flights.size();i++) {
             currFlight = (Flight) flights.get(i);
-            flightInfo.add(currFlight.getNumber());
-            flightInfo.add(currFlight.getDepartureAirport());
-            flightInfo.add(currFlight.getArrivalAirport());
-            flightInfo.add(currFlight.getTripPrice());
+            flightInfo.add("Flugnúmer er " + currFlight.getNumber());
+            flightInfo.add("Frá flugvelli " + currFlight.getDepartureAirport());
+            flightInfo.add(" til flugvölls " + currFlight.getArrivalAirport());
+            flightInfo.add("Verð: " + currFlight.getTripPrice());
         }
         return flightInfo;
     }
