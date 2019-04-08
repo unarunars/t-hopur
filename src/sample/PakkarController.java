@@ -18,6 +18,11 @@ public class PakkarController implements Initializable {
     Fetcher fetch = new Fetcher();
     ArrayList packages = fetch.getAllPackages();
 
+    /*
+    Package soldPackage = (Package) packages.get(4);
+    String testName = soldPackage.getName();
+    */
+
     @FXML
     private Label prufa;
 
