@@ -33,7 +33,7 @@ public class PakkarController implements Initializable {
     }
     public void showTrips(){
         Fetcher fetch = new Fetcher();
-        ArrayList flights = fetch.getPackageInfo(packages, 0);
+        ArrayList flights = fetch.getPackageInfo(packages, 0,0);
         String r = "";
         for(int i = 0; i < flights.size(); i++){
             String a =  flights.get(i) + " \n ";

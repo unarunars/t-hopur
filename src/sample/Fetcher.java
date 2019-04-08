@@ -61,8 +61,8 @@ public class Fetcher {
             currFlight = (Flight) flights.get(i);
             flightInfo.add("Flugnúmer er " + currFlight.getNumber());
             flightInfo.add("Frá flugvelli " + currFlight.getDepartureAirport());
-            flightInfo.add(" til flugvölls " + currFlight.getArrivalAirport());
-            flightInfo.add("Verð: " + currFlight.getTripPrice());
+            flightInfo.add("Til flugvölls " + currFlight.getArrivalAirport());
+            flightInfo.add("Verð: " + currFlight.getTripPrice() + " kr.");
         }
         return flightInfo;
     }
@@ -131,9 +131,7 @@ public class Fetcher {
             ScheduledFlight[] flights = schedule.searchFlights( currPackage.getDepartureDestinationID(),
                                                                 currPackage.getDestinationID(),
                                                                 date);
-            System.out.println(flights == null);
-            System.out.println(flights[0]);
-            if (flights == null) {
+            if (flights.length == 0) {
                 continue;
             } else {
                 newPackages.add(currPackage);
