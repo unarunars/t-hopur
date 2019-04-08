@@ -91,6 +91,7 @@ public class Fetcher {
             room = (Room) rooms.get(i);
             price += room.getPrice();
         }
+        price /= rooms.size();
         return price;
     }
 
@@ -115,13 +116,15 @@ public class Fetcher {
         for (int i = 0; i<packages.size(); i++) {
             System.out.println(i);
             currPackage = (Package) packages.get(i);
-            price = currPackage.getPrice(14);
+            price = currPackage.getPrice();
             packageInfo.add(currPackage.getName());
-            packageInfo.add("Frá" + currPackage.getDepartureDestination());
-            packageInfo.add(" til " + currPackage.getDestination());
-            packageInfo.add("Hótel: " + currPackage.getHotel().getName());
+            packageInfo.add("Frá " + currPackage.getDepartureDestination());
+            packageInfo.add("Til " + currPackage.getDestination());
+            packageInfo.add("Hótel: " + currPackage.getHotel().getName());;
             packageInfo.add("Viðburður: " + currPackage.getEvent().getName());
-            packageInfo.add("Verð frá " + price[0] + " - " + price[i]);
+            packageInfo.add("Flug og viðburðarkostnaður: " + price[0]);
+            packageInfo.add("Gistingarkostnaður: " + price[1]);
+            packageInfo.add("Samtalskostnaður: " + currPackage.getTotalPrice());
         }
         return packageInfo;
     }

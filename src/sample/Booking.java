@@ -1,6 +1,10 @@
 package sample;
 
-import hopurd.models.Trip;
+import hopurd.database.BookingQueries;
+import hopurd.database.DepartureQueries;
+import hopurd.database.TripQueries;
+import hopurd.database.UserQueries;
+import hopurd.models.*;
 import leit.flug.Schedule;
 import leit.flug.ScheduledFlight;
 import leit.hotel.Hotel;
@@ -24,6 +28,11 @@ public class Booking {
         if (!confirmHotel) return false;
 
         //TripCheck
+        Trip trip = soldPackage.getEvent();
+        Departure departure = DepartureQueries.getAllTripDepartures(trip.getId()).get(0);
+        User user = UserQueries.getUser("admin");
+        hopurd.models.Booking booking = new hopurd.models.Booking(user, departure, Enums.Status.PAID);
+        for (int i = 0; i<touristCount;i++) BookingQueries.insertBooking(booking);
 
 
         bookFlight(flights[0], date, touristCount, schedule);
@@ -52,6 +61,7 @@ public class Booking {
 
         return false;
     }
+
     public boolean checkRooms(int touristCount, ArrayList rooms) {
         Room currRoom = null;
         int beds = 0;
@@ -62,10 +72,4 @@ public class Booking {
 
         return (beds >= touristCount);
     }
-
-    public void removeEvents(int touristCount, Package soldPackage) {
-        //soldPackage.removeEventSeats(touristCount);
-    }
-
-
 }

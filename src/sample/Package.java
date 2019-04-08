@@ -9,6 +9,8 @@ public class Package {
     String departureDestinationID;
     String destination;
     String destinationID;
+    int days;
+    int totalPrice = 0;
     Trip event;
     Hotel hotel;
 
@@ -31,6 +33,9 @@ public class Package {
         return destinationID;
     }
 
+    public void setDays(int dagar) { days = dagar; }
+    public int getDays() { return days; }
+
     public void setEvent(Trip thing){
         event = thing;
     }
@@ -45,14 +50,20 @@ public class Package {
         return hotel;
     }
 
-    public int[] getPrice(int days) {
+    public int[] getPrice() {
         int[] price = new int[2];
         int currPrice = 0;
         Fetcher fetch = new Fetcher();
         currPrice += fetch.getFlightPrice(departureDestinationID, destinationID);
-        currPrice += event.getPrice();
+        currPrice += event.getPrice() * days;
         price[0] = currPrice;
-        price[1] = currPrice + fetch.getHotelPrice(hotel)*days;
+        price[1] = fetch.getHotelPrice(hotel)*days;
+        totalPrice = price[0] + price[1];
         return price;
+    }
+
+    public int getTotalPrice() {
+        if (totalPrice == 0) getPrice();
+        return totalPrice;
     }
 }

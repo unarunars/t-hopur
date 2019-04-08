@@ -21,6 +21,7 @@ public class PackageCreator {
         myPackage.setEvent(trip);
         myPackage.setDepartureDestinationID("BIU");
         myPackage.setDestinationID("AEY");
+        myPackage.setDays(3);
         return myPackage;
     }
     public Package pakkiTvo(){
@@ -34,6 +35,7 @@ public class PackageCreator {
         myPackage.setEvent(trip);
         myPackage.setDepartureDestinationID("GJR");
         myPackage.setDestinationID("AEY");
+        myPackage.setDays(2);
         return myPackage;
     }
     public Package pakkiThrju(){
@@ -47,6 +49,7 @@ public class PackageCreator {
         myPackage.setEvent(trip);
         myPackage.setDepartureDestinationID("VEY");
         myPackage.setDestinationID("HFN");
+        myPackage.setDays(7);
         return myPackage;
     }
     public Package pakkiFjogur() {
@@ -60,6 +63,7 @@ public class PackageCreator {
         myPackage.setEvent(trip);
         myPackage.setDepartureDestinationID("EGS");
         myPackage.setDestinationID("GJR");
+        myPackage.setDays(14);
         return myPackage;
     }
     public Package pakkiFimm() {
@@ -73,6 +77,7 @@ public class PackageCreator {
         myPackage.setEvent(trip);
         myPackage.setDepartureDestinationID("RKV");
         myPackage.setDestinationID("GJR");
+        myPackage.setDays(5);
         return myPackage;
     }
 
