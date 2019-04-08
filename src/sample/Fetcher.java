@@ -165,6 +165,7 @@ public class Fetcher {
         return packageInfo;
     }
 
+
     public String splitToDate(String date) {
         String[] splitDate = date.split(".");
         String corrDate = "" + splitDate[2] + "-" + splitDate[1] + "-" + splitDate;

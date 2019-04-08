@@ -5,9 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 
@@ -20,6 +18,7 @@ import java.util.ResourceBundle;
 public class PakkarController implements Initializable {
     Fetcher fetch = new Fetcher();
     ArrayList packages = fetch.getAllPackages();
+    Booking booking = new Booking();
 
     /*
     Package soldPackage = (Package) packages.get(4);
@@ -30,6 +29,8 @@ public class PakkarController implements Initializable {
     private Label prufa;
     @FXML
     private DatePicker date;
+    @FXML
+    private TextField fjoldiGesta;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -63,6 +64,33 @@ public class PakkarController implements Initializable {
         }
         prufa.setText(r);
 
+    }
+    @FXML
+    private void BokaHandler(javafx.event.ActionEvent actionEvent){
+        int year = (date.getValue().getYear());
+        int day = (date.getValue().getDayOfMonth());
+        int month = (date.getValue().getMonthValue());
+
+        String ar = Integer.toString(year);
+        String dagur= Integer.toString(day);
+        String manudur = Integer.toString(month);
+
+        String dagsetning = ar + "-" + manudur + "-" + dagur;
+        Booking booking = new Booking();
+        Fetcher fetcher = new Fetcher();
+
+
+        //if(booking.bookPackage(dagsetning, fjoldiGesta, packages))
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("boka.fxml"));
+            Parent root = (Parent) loader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Bóka");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (Exception e) {
+            System.out.println("villa: " + e.getMessage());
+        }
     }
     @FXML
     private void medalPakkarHandler(javafx.event.ActionEvent actionEvent){
@@ -117,25 +145,13 @@ public class PakkarController implements Initializable {
         for(int i = 0; i < pakki.size(); i++){
             String a =  pakki.get(i) + " \n ";
             r += a;
-            if ( (i+1) % 9 == 0){
+            if ( (i+1) % 10 == 0){
                 r += "\n";
             }
         }
         prufa.setText(r);
     }
-    @FXML
-    private void BokaHandler(javafx.event.ActionEvent actionEvent){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("boka.fxml"));
-            Parent root = (Parent) loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Bóka");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("villa: " + e.getMessage());
-        }
-    }
+
     @FXML
     private void  tilBakaHandler(javafx.event.ActionEvent actionEvent) {
         try {

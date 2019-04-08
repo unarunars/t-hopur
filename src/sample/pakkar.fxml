@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
@@ -20,17 +20,20 @@
             </Label>
             <Button fx:id="tilBaka" mnemonicParsing="false" onAction="#tilBakaHandler" prefHeight="94.0" prefWidth="118.0" style="-fx-background-color: mediumorchid;" text="Til baka" />
          </children></HBox>
-      <ScrollPane layoutX="36.0" layoutY="109.0" prefHeight="364.0" prefWidth="546.0">
+      <ScrollPane layoutX="36.0" layoutY="109.0" prefHeight="364.0" prefWidth="436.0">
          <content>
             <Label fx:id="prufa" prefHeight="5000.0" prefWidth="478.0" />
          </content>
       </ScrollPane>
-      <Button layoutX="591.0" layoutY="109.0" mnemonicParsing="false" onAction="#luxusPakkiHandler" prefHeight="47.0" prefWidth="177.0" text="Lúxus pakkar" />
-      <Button layoutX="591.0" layoutY="162.0" mnemonicParsing="false" onAction="#medalPakkarHandler" prefHeight="47.0" prefWidth="177.0" text="Meðalmanns pakkar" />
-      <Button layoutX="591.0" layoutY="216.0" mnemonicParsing="false" onAction="#lagPakkaHandler" prefHeight="47.0" prefWidth="177.0" text="Lágstéttar pakkar" />
+      <Button layoutX="626.0" layoutY="130.0" mnemonicParsing="false" onAction="#luxusPakkiHandler" prefHeight="32.0" prefWidth="142.0" text="Lúxus pakkar" />
+      <Button layoutX="626.0" layoutY="162.0" mnemonicParsing="false" onAction="#medalPakkarHandler" prefHeight="15.0" prefWidth="142.0" text="Meðalmanns pakkar" />
+      <Button layoutX="626.0" layoutY="193.0" mnemonicParsing="false" onAction="#lagPakkaHandler" prefHeight="31.0" prefWidth="142.0" text="Lágstéttar pakkar" />
       <DatePicker fx:id="date" layoutX="591.0" layoutY="280.0" prefHeight="40.0" prefWidth="177.0" />
-      <ChoiceBox fx:id="dateGaurinn" layoutX="591.0" layoutY="386.0" prefHeight="40.0" prefWidth="177.0" />
-      <Button fx:id="bokaTakki" layoutX="591.0" layoutY="482.0" mnemonicParsing="false" onAction="#BokaHandler" prefHeight="47.0" prefWidth="177.0" text="Boka" />
-      <Button layoutX="591.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#dateFilterHandler" prefHeight="47.0" prefWidth="177.0" text="Velja dagsetningu" />
+      <Button fx:id="bokaTakki" layoutX="584.0" layoutY="492.0" mnemonicParsing="false" onAction="#BokaHandler" prefHeight="47.0" prefWidth="177.0" text="Boka" />
+      <Button layoutX="677.0" layoutY="329.0" mnemonicParsing="false" onMouseClicked="#dateFilterHandler" prefHeight="23.0" prefWidth="91.0" text="Velja dagsetningu" />
+      <Label layoutX="626.0" layoutY="99.0" prefHeight="31.0" prefWidth="123.0" text="Filter:" />
+      <Label layoutX="591.0" layoutY="251.0" prefHeight="23.0" prefWidth="142.0" text="Dagsetning: " />
+      <Label layoutX="584.0" layoutY="404.0" prefHeight="23.0" prefWidth="108.0" text="Fjöldi gesta:" />
+      <TextField fx:id="fjoldiGesta" layoutX="579.0" layoutY="442.0" />
    </children>
 </AnchorPane>
