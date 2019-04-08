@@ -55,7 +55,7 @@ public class Package {
         int currPrice = 0;
         Fetcher fetch = new Fetcher();
         currPrice += fetch.getFlightPrice(departureDestinationID, destinationID);
-        currPrice += event.getPrice() * days;
+        currPrice += event.getPrice() * days * 100;
         price[0] = currPrice;
         price[1] = fetch.getHotelPrice(hotel)*days;
         totalPrice = price[0] + price[1];

@@ -95,6 +95,20 @@ public class Fetcher {
         return price;
     }
 
+    public int[] getHotelRoomsSize(Hotel hotel) {
+        ArrayList rooms = hotel.getRooms();
+        Room room = null;
+        int[] sizes = new int[2];
+        sizes[0] = 99999;
+        sizes[1] = -9999;
+        for (int i = 0; i < rooms.size(); i++) {
+            room = (Room) rooms.get(i);
+            if (room.getGuests() < sizes[0]) sizes[0] = room.getGuests();
+            if (room.getGuests() > sizes[1]) sizes[1] = room.getGuests();
+        }
+        return sizes;
+    }
+
     public ArrayList getAllTrips() {
         hopurd.main.API.initDB();
         ArrayList trips = hopurd.main.API.getAllTrips();
@@ -112,11 +126,12 @@ public class Fetcher {
         ArrayList packages = getAllPackages();
         ArrayList packageInfo = new ArrayList();
         Package currPackage = null;
-        int[] price;
+        int[] price; int[] sizes;
         for (int i = 0; i<packages.size(); i++) {
             System.out.println(i);
             currPackage = (Package) packages.get(i);
             price = currPackage.getPrice();
+            sizes = getHotelRoomsSize(currPackage.getHotel());
             packageInfo.add(currPackage.getName());
             packageInfo.add("Frá " + currPackage.getDepartureDestination());
             packageInfo.add("Til " + currPackage.getDestination());
@@ -125,7 +140,9 @@ public class Fetcher {
             packageInfo.add("Flug og viðburðarkostnaður: " + price[0]);
             packageInfo.add("Meðal gistingarkostnaður: " + price[1]);
             packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice());
+            packageInfo.add("Herbergi geta haldið um " + sizes[0] + " til " + sizes[1] + " gesti");
         }
         return packageInfo;
     }
+
 }
