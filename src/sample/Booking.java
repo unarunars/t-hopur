@@ -54,7 +54,7 @@ public class Booking {
         Hotel currHotel = null;
         for (int i = 0; i<hotels.size(); i++) {
             currHotel = (Hotel) hotels.get(i);
-            if (currHotel.getName() == hotelName.getName()) {
+            if (currHotel.getName().equals(hotelName.getName())) {
                 return checkRooms(touristCount, currHotel.getRooms());
             }
         }
