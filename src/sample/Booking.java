@@ -38,6 +38,21 @@ public class Booking {
         return true;
     }
 
+    public void bookPackageFinal(String date, int touristCount, Package soldPackage) {
+        Schedule schedule = new Schedule();
+        ScheduledFlight[] flights = schedule.searchFlights( soldPackage.getDepartureDestinationID(),
+                                                            soldPackage.getDestinationID(),
+                                                            date);
+        Trip trip = soldPackage.getEvent();
+        Departure departure = DepartureQueries.getAllTripDepartures(trip.getId()).get(0);
+        User user = UserQueries.getUser("admin");
+        hopurd.models.Booking booking = new hopurd.models.Booking(user, departure, Enums.Status.PAID);
+        for (int i = 0; i<touristCount;i++) BookingQueries.insertBooking(booking);
+
+
+        bookFlight(flights[0], date, touristCount, schedule);
+    }
+
     public void bookFlight(ScheduledFlight flight, String date, int touristCount, Schedule schedule) {
         leit.flug.Booking booking = new leit.flug.Booking();
         booking.setFlight(flight);
@@ -57,7 +72,6 @@ public class Booking {
                 return checkRooms(touristCount, currHotel.getRooms());
             }
         }
-
         return false;
     }
 
