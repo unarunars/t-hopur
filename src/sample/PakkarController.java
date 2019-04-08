@@ -46,6 +46,12 @@ public class PakkarController implements Initializable {
         prufa.setText(r);
     }
     @FXML
+    private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
+    /*   Fetcher fetch = new Fetcher();
+        ArrayList pakki = fetch.getPackageInfo(packages, )
+*/
+    }
+    @FXML
     private void BokaHandler(javafx.event.ActionEvent actionEvent){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("boka.fxml"));
@@ -71,10 +77,6 @@ public class PakkarController implements Initializable {
             System.out.println("villa: " + e.getMessage());
         }
     }
-    @FXML
-    private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
 
-
-    }
 
 }
