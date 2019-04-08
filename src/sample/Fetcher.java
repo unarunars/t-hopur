@@ -122,6 +122,24 @@ public class Fetcher {
         return packages;
     }
 
+    public ArrayList getPackageDateInfo(ArrayList packages, int filter, String date) {
+        Schedule schedule = new Schedule();
+        ArrayList newPackages = new ArrayList();
+        Package currPackage = null;
+        for (int i = 0; i<packages.size(); i++) {
+            currPackage = (Package) packages.get(i);
+            ScheduledFlight[] flights = schedule.searchFlights( currPackage.getDepartureDestinationID(),
+                                                                currPackage.getDestinationID(),
+                                                                date);
+            if (flights == null) {
+                continue;
+            } else {
+                newPackages.add(currPackage);
+            }
+        }
+        return getPackageInfo(newPackages, filter);
+    }
+
     public ArrayList getPackageInfo(ArrayList packages, int filter) {
         if (filter == 0) filter = 999999999;
         ArrayList packageInfo = new ArrayList();
@@ -137,8 +155,8 @@ public class Fetcher {
                 packageInfo.add("Til " + currPackage.getDestination());
                 packageInfo.add("Hótel: " + currPackage.getHotel().getName());
                 packageInfo.add("Viðburður: " + currPackage.getEvent().getName());
-                packageInfo.add("Flug og viðburðarkostnaður: " + price[0]);
-                packageInfo.add("Meðal gistingarkostnaður: " + price[1]);
+                packageInfo.add("Flug og viðburðarkostnaður fyrir einstakling: " + price[0]);
+                packageInfo.add("Meðal gistingarkostnaður herbergis: " + price[1]);
                 packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice());
                 packageInfo.add("Herbergi geta haldið um " + sizes[0] + " til " + sizes[1] + " gesti");
             }
