@@ -122,7 +122,7 @@ public class Fetcher {
         return packages;
     }
 
-    public ArrayList getPackageDateInfo(ArrayList packages, int filter, String date) {
+    public ArrayList getPackageDateInfo(ArrayList packages, int filterMax, int filterMin, String date) {
         Schedule schedule = new Schedule();
         ArrayList newPackages = new ArrayList();
         Package currPackage = null;
@@ -131,33 +131,36 @@ public class Fetcher {
             ScheduledFlight[] flights = schedule.searchFlights( currPackage.getDepartureDestinationID(),
                                                                 currPackage.getDestinationID(),
                                                                 date);
+            System.out.println(flights == null);
+            System.out.println(flights[0]);
             if (flights == null) {
                 continue;
             } else {
                 newPackages.add(currPackage);
             }
         }
-        return getPackageInfo(newPackages, filter);
+        return getPackageInfo(newPackages, filterMin, filterMax);
     }
 
-    public ArrayList getPackageInfo(ArrayList packages, int filter) {
-        if (filter == 0) filter = 999999999;
+    public ArrayList getPackageInfo(ArrayList packages, int filterMax, int filterMin) {
+        if (filterMax == 0) filterMax = 999999999;
         ArrayList packageInfo = new ArrayList();
         Package currPackage = null;
         int[] price; int[] sizes;
         for (int i = 0; i<packages.size(); i++) {
             currPackage = (Package) packages.get(i);
             price = currPackage.getPrice();
-            if (currPackage.getTotalPrice() < filter) {
+            if ((currPackage.getTotalPrice() < filterMax) && (currPackage.getTotalPrice() > filterMin)) {
                 sizes = getHotelRoomsSize(currPackage.getHotel());
                 packageInfo.add(currPackage.getName());
+                System.out.println(currPackage.getName());
                 packageInfo.add("Frá " + currPackage.getDepartureDestination());
                 packageInfo.add("Til " + currPackage.getDestination());
                 packageInfo.add("Hótel: " + currPackage.getHotel().getName());
                 packageInfo.add("Viðburður: " + currPackage.getEvent().getName());
-                packageInfo.add("Flug og viðburðarkostnaður fyrir einstakling: " + price[0]);
-                packageInfo.add("Meðal gistingarkostnaður herbergis: " + price[1]);
-                packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice());
+                packageInfo.add("Flug og viðburðarkostnaður fyrir einstakling: " + price[0] + " kr.");
+                packageInfo.add("Meðal gistingarkostnaður herbergis: " + price[1] + " kr.");
+                packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice() + " kr.");
                 packageInfo.add("Herbergi geta haldið um " + sizes[0] + " til " + sizes[1] + " gesti");
             }
         }
