@@ -151,7 +151,6 @@ public class Fetcher {
             if ((currPackage.getTotalPrice() < filterMax) && (currPackage.getTotalPrice() > filterMin)) {
                 sizes = getHotelRoomsSize(currPackage.getHotel());
                 packageInfo.add(currPackage.getName());
-                System.out.println(currPackage.getName());
                 packageInfo.add("Frá " + currPackage.getDepartureDestination());
                 packageInfo.add("Til " + currPackage.getDestination());
                 packageInfo.add("Hótel: " + currPackage.getHotel().getName());
