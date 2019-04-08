@@ -123,8 +123,8 @@ public class Fetcher {
             packageInfo.add("Hótel: " + currPackage.getHotel().getName());;
             packageInfo.add("Viðburður: " + currPackage.getEvent().getName());
             packageInfo.add("Flug og viðburðarkostnaður: " + price[0]);
-            packageInfo.add("Gistingarkostnaður: " + price[1]);
-            packageInfo.add("Samtalskostnaður: " + currPackage.getTotalPrice());
+            packageInfo.add("Meðal gistingarkostnaður: " + price[1]);
+            packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice());
         }
         return packageInfo;
     }
