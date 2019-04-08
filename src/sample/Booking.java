@@ -26,15 +26,6 @@ public class Booking {
 
         if (!confirmHotel) return false;
 
-        //TripCheck
-        Trip trip = soldPackage.getEvent();
-        Departure departure = DepartureQueries.getAllTripDepartures(trip.getId()).get(0);
-        User user = UserQueries.getUser("admin");
-        hopurd.models.Booking booking = new hopurd.models.Booking(user, departure, Enums.Status.PAID);
-        for (int i = 0; i<touristCount;i++) BookingQueries.insertBooking(booking);
-
-
-        bookFlight(flights[0], date, touristCount, schedule);
         return true;
     }
 
