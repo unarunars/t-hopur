@@ -66,5 +66,9 @@ public class PakkarController implements Initializable {
             System.out.println("villa: " + e.getMessage());
         }
     }
+    @FXML
+    private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
+
+    }
 
 }
