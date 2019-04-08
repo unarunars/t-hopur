@@ -2,7 +2,6 @@ package sample;
 
 import hopurd.database.BookingQueries;
 import hopurd.database.DepartureQueries;
-import hopurd.database.TripQueries;
 import hopurd.database.UserQueries;
 import hopurd.models.*;
 import leit.flug.Schedule;
