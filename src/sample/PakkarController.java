@@ -33,17 +33,23 @@ public class PakkarController implements Initializable {
     }
     public void showTrips(){
         Fetcher fetch = new Fetcher();
-        ArrayList flights = fetch.getPackageInfo(packages, 0);
+        ArrayList flights = fetch.getPackageInfo(packages, 0,0);
         String r = "";
         for(int i = 0; i < flights.size(); i++){
             String a =  flights.get(i) + " \n ";
             r += a;
-            if ( (i+1) % 9 == 0){
+            if ( (i+1) % 10 == 0){
                 r += "\n";
             }
         }
         System.out.println(r);
         prufa.setText(r);
+    }
+    @FXML
+    private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
+    /*   Fetcher fetch = new Fetcher();
+        ArrayList pakki = fetch.getPackageInfo(packages, )
+*/
     }
     @FXML
     private void BokaHandler(javafx.event.ActionEvent actionEvent){
@@ -71,10 +77,6 @@ public class PakkarController implements Initializable {
             System.out.println("villa: " + e.getMessage());
         }
     }
-    @FXML
-    private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
 
-
-    }
 
 }
