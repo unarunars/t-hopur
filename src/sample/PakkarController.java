@@ -38,7 +38,7 @@ public class PakkarController implements Initializable {
         for(int i = 0; i < flights.size(); i++){
             String a =  flights.get(i) + " \n ";
             r += a;
-            if ( (i+1) % 9 == 0){
+            if ( (i+1) % 10 == 0){
                 r += "\n";
             }
         }

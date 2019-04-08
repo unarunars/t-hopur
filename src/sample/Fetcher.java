@@ -159,6 +159,7 @@ public class Fetcher {
                 packageInfo.add("Meðal gistingarkostnaður herbergis: " + price[1] + " kr.");
                 packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice() + " kr.");
                 packageInfo.add("Herbergi geta haldið um " + sizes[0] + " til " + sizes[1] + " gesti");
+                packageInfo.add("Pakkinn er " + currPackage.getDays() + " dagar");
             }
         }
         return packageInfo;
