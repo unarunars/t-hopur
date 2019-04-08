@@ -69,6 +69,7 @@ public class PakkarController implements Initializable {
     @FXML
     private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
 
+
     }
 
 }
