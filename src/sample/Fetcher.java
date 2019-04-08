@@ -122,25 +122,26 @@ public class Fetcher {
         return packages;
     }
 
-    public ArrayList getPackageInfo() {
-        ArrayList packages = getAllPackages();
+    public ArrayList getPackageInfo(ArrayList packages, int filter) {
+        if (filter == 0) filter = 999999999;
         ArrayList packageInfo = new ArrayList();
         Package currPackage = null;
         int[] price; int[] sizes;
         for (int i = 0; i<packages.size(); i++) {
-            System.out.println(i);
             currPackage = (Package) packages.get(i);
             price = currPackage.getPrice();
-            sizes = getHotelRoomsSize(currPackage.getHotel());
-            packageInfo.add(currPackage.getName());
-            packageInfo.add("Frá " + currPackage.getDepartureDestination());
-            packageInfo.add("Til " + currPackage.getDestination());
-            packageInfo.add("Hótel: " + currPackage.getHotel().getName());;
-            packageInfo.add("Viðburður: " + currPackage.getEvent().getName());
-            packageInfo.add("Flug og viðburðarkostnaður: " + price[0]);
-            packageInfo.add("Meðal gistingarkostnaður: " + price[1]);
-            packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice());
-            packageInfo.add("Herbergi geta haldið um " + sizes[0] + " til " + sizes[1] + " gesti");
+            if (currPackage.getTotalPrice() < filter) {
+                sizes = getHotelRoomsSize(currPackage.getHotel());
+                packageInfo.add(currPackage.getName());
+                packageInfo.add("Frá " + currPackage.getDepartureDestination());
+                packageInfo.add("Til " + currPackage.getDestination());
+                packageInfo.add("Hótel: " + currPackage.getHotel().getName());
+                packageInfo.add("Viðburður: " + currPackage.getEvent().getName());
+                packageInfo.add("Flug og viðburðarkostnaður: " + price[0]);
+                packageInfo.add("Meðal gistingarkostnaður: " + price[1]);
+                packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice());
+                packageInfo.add("Herbergi geta haldið um " + sizes[0] + " til " + sizes[1] + " gesti");
+            }
         }
         return packageInfo;
     }

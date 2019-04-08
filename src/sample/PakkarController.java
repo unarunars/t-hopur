@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class PakkarController implements Initializable {
+    Fetcher fetch = new Fetcher();
+    ArrayList packages = fetch.getAllPackages();
+
     @FXML
     private Label prufa;
 
@@ -25,7 +28,7 @@ public class PakkarController implements Initializable {
     }
     public void showTrips(){
         Fetcher fetch = new Fetcher();
-        ArrayList flights = fetch.getPackageInfo();
+        ArrayList flights = fetch.getPackageInfo(packages, 0);
         String r = "";
         for(int i = 0; i < flights.size(); i++){
             String a =  flights.get(i) + " \n ";
