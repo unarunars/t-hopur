@@ -22,7 +22,7 @@
          </children></HBox>
       <ScrollPane layoutX="36.0" layoutY="109.0" prefHeight="364.0" prefWidth="546.0">
          <content>
-            <Label fx:id="prufa" prefHeight="1000.0" prefWidth="478.0" />
+            <Label fx:id="prufa" prefHeight="5000.0" prefWidth="478.0" />
          </content>
       </ScrollPane>
       <Button layoutX="591.0" layoutY="109.0" mnemonicParsing="false" onAction="#luxusPakkiHandler" prefHeight="47.0" prefWidth="177.0" text="Lúxus pakkar" />

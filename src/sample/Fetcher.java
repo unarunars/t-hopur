@@ -61,8 +61,8 @@ public class Fetcher {
             currFlight = (Flight) flights.get(i);
             flightInfo.add("Flugnúmer er " + currFlight.getNumber());
             flightInfo.add("Frá flugvelli " + currFlight.getDepartureAirport());
-            flightInfo.add(" til flugvölls " + currFlight.getArrivalAirport());
-            flightInfo.add("Verð: " + currFlight.getTripPrice());
+            flightInfo.add("Til flugvölls " + currFlight.getArrivalAirport());
+            flightInfo.add("Verð: " + currFlight.getTripPrice() + " kr.");
         }
         return flightInfo;
     }
@@ -131,9 +131,7 @@ public class Fetcher {
             ScheduledFlight[] flights = schedule.searchFlights( currPackage.getDepartureDestinationID(),
                                                                 currPackage.getDestinationID(),
                                                                 date);
-            System.out.println(flights == null);
-            System.out.println(flights[0]);
-            if (flights == null) {
+            if (flights.length == 0) {
                 continue;
             } else {
                 newPackages.add(currPackage);
@@ -153,7 +151,6 @@ public class Fetcher {
             if ((currPackage.getTotalPrice() < filterMax) && (currPackage.getTotalPrice() > filterMin)) {
                 sizes = getHotelRoomsSize(currPackage.getHotel());
                 packageInfo.add(currPackage.getName());
-                System.out.println(currPackage.getName());
                 packageInfo.add("Frá " + currPackage.getDepartureDestination());
                 packageInfo.add("Til " + currPackage.getDestination());
                 packageInfo.add("Hótel: " + currPackage.getHotel().getName());
@@ -162,9 +159,16 @@ public class Fetcher {
                 packageInfo.add("Meðal gistingarkostnaður herbergis: " + price[1] + " kr.");
                 packageInfo.add("Meðal samtalskostnaður: " + currPackage.getTotalPrice() + " kr.");
                 packageInfo.add("Herbergi geta haldið um " + sizes[0] + " til " + sizes[1] + " gesti");
+                packageInfo.add("Pakkinn er " + currPackage.getDays() + " dagar");
             }
         }
         return packageInfo;
+    }
+
+    public String splitToDate(String date) {
+        String[] splitDate = date.split(".");
+        String corrDate = "" + splitDate[2] + "-" + splitDate[1] + "-" + splitDate;
+        return corrDate;
     }
 
 }

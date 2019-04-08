@@ -77,7 +77,7 @@ public class Main extends Application {
         Booking booking = new Booking();
         Fetcher fetch = new Fetcher();
         ArrayList packages = fetch.getAllPackages();
-        //fetch.getPackageDateInfo(packages, 0, "2019-1-3");
+        fetch.getPackageDateInfo(packages, 0, 0,"2017-1-3");
     }
 
     public static void main(String[] args) {
