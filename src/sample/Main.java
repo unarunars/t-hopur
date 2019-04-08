@@ -74,10 +74,10 @@ public class Main extends Application {
     }
 
     public static void packages4() {
-        Booking booking = new Booking();
         Fetcher fetch = new Fetcher();
         ArrayList packages = fetch.getAllPackages();
-        fetch.getPackageDateInfo(packages, 0, 0,"2017-1-3");
+        Package currPackage = fetch.getPackageByName(packages, "Gjöróðipakkinn");
+        System.out.println(currPackage.getName());
     }
 
     public static void main(String[] args) {

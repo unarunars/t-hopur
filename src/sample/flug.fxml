@@ -1,33 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="560.0" prefWidth="775.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FlugController">
+<AnchorPane prefHeight="560.0" prefWidth="525.0" style="-fx-background-color: C81399;" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.FlugController">
    <children>
-      <HBox prefHeight="81.0" prefWidth="775.0" style="-fx-background-color: mediumorchid;">
+      <HBox alignment="CENTER" prefHeight="90.0" prefWidth="775.0" style="-fx-background-color: #921070;">
          <children>
-            <Label prefHeight="81.0" prefWidth="688.0" text="                   Flug">
+            <HBox prefHeight="100.0" prefWidth="200.0" />
+            <Label prefHeight="90.0" prefWidth="468.0" text="        Flug" textFill="WHITE">
                <font>
                   <Font name="Century Gothic" size="45.0" />
                </font>
             </Label>
-            <Button fx:id="tilBaka" mnemonicParsing="false" onAction="#tilBakaHandler" prefHeight="78.0" prefWidth="117.0" style="-fx-background-color: mediumorchid;" text="Til Baka" />
+            <Button fx:id="tilBaka" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#tilBakaHandler" prefHeight="60.0" prefWidth="95.0" style="-fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" text="Til Baka" textFill="WHITE" />
          </children></HBox>
-      <ScrollPane layoutX="82.0" layoutY="149.0" prefHeight="334.0" prefWidth="635.0">
+      <ScrollPane layoutX="82.0" layoutY="149.0" prefHeight="334.0" prefWidth="635.0" style="-fx-background-color: C81399;">
          <content>
-            <Label fx:id="flugInfo" prefHeight="2100.0" prefWidth="635.0" />
+            <Label fx:id="flugInfo" prefHeight="2100.0" prefWidth="618.0" style="-fx-background-color: C81399; -fx-border-color: #921070; -fx-border-radius: 20;" textFill="WHITE" />
          </content>
       </ScrollPane>
    </children>

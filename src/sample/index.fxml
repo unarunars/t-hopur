@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -16,11 +10,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="559.0" prefWidth="775.0" style="-fx-background-color: #600459; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="559.0" prefWidth="775.0" style="-fx-background-color: #C81399; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <HBox prefHeight="100.0" prefWidth="775.0" style="-fx-background-color: #6f2273; -fx-background-radius: 20;">
+      <HBox prefHeight="90.0" prefWidth="775.0" style="-fx-background-color: #921070; -fx-background-radius: 20;">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="778.0" style="-fx-background-radius: 20; -fx-border-insets: 0;" text="Rattatoskr" textFill="#fcfcfc">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="778.0" style="-fx-background-radius: 20; -fx-border-insets: 0;" text="VÁ-Ferðir" textFill="#fcfcfc">
                <font>
                   <Font name="Century Gothic" size="44.0" />
                </font>
@@ -37,21 +31,20 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="hotelTakki" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#hotelHandler" prefHeight="168.0" prefWidth="181.0" style="-fx-background-color: #42053d; -fx-background-radius: 20;" text="Hótel" textFill="#f8f8f8">
+            <Button fx:id="hotelTakki" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#hotelHandler" prefHeight="168.0" prefWidth="181.0" style="-fx-background-color: #A70F7F; -fx-border-color: #921070; -fx-border-radius: 20; -fx-background-radius: 20;" text="Hótel" textFill="#f8f8f8">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font></Button>
-            <Button fx:id="pakkiTakki" mnemonicParsing="false" onAction="#pakkiHandler" prefHeight="168.0" prefWidth="181.0" style="-fx-background-color: #42053d; -fx-background-radius: 20;" text="Pakkar" textFill="WHITE" GridPane.columnIndex="1">
+            <Button fx:id="pakkiTakki" mnemonicParsing="false" onAction="#pakkiHandler" prefHeight="168.0" prefWidth="181.0" style="-fx-background-color: #A70F7F; -fx-border-color: #921070; -fx-border-radius: 20; -fx-background-radius: 20;" text="Pakkar" textFill="WHITE" GridPane.columnIndex="1">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font></Button>
-            <Button fx:id="flugTakki" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#flugHandler" prefHeight="168.0" prefWidth="179.0" style="-fx-background-color: #42053d; -fx-background-radius: 20;" text="Áfangastaðir" textFill="WHITE" GridPane.columnIndex="2">
+            <Button fx:id="flugTakki" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#flugHandler" prefHeight="168.0" prefWidth="179.0" style="-fx-background-color: #A70F7F; -fx-border-color: #921070; -fx-border-radius: 20; -fx-background-radius: 20;" text="Áfangastaðir" textFill="WHITE" GridPane.columnIndex="2">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font></Button>
          </children>
       </GridPane>
-      <Separator layoutX="89.0" layoutY="98.0" prefHeight="4.0" prefWidth="575.0" />
       <ImageView fitHeight="100.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #600459;" />
    </children>
 </AnchorPane>

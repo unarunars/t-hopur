@@ -140,6 +140,17 @@ public class Fetcher {
         return getPackageInfo(newPackages, filterMin, filterMax);
     }
 
+    public Package getPackageByName(ArrayList packages, String packageName) {
+        Package currPackage = null;
+
+        for (int i = 0; i<packages.size(); i++) {
+            currPackage = (Package) packages.get(i);
+            if (currPackage.getName().equals(packageName)) return currPackage;
+        }
+
+        return null;
+    }
+
     public ArrayList getPackageInfo(ArrayList packages, int filterMax, int filterMin) {
         if (filterMax == 0) filterMax = 999999999;
         ArrayList packageInfo = new ArrayList();
@@ -164,12 +175,4 @@ public class Fetcher {
         }
         return packageInfo;
     }
-
-
-    public String splitToDate(String date) {
-        String[] splitDate = date.split(".");
-        String corrDate = "" + splitDate[2] + "-" + splitDate[1] + "-" + splitDate;
-        return corrDate;
-    }
-
 }
