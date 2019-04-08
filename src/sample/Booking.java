@@ -26,7 +26,14 @@ public class Booking {
 
         if (!confirmHotel) return false;
 
-        //TripCheck
+        return true;
+    }
+
+    public void bookPackageFinal(String date, int touristCount, Package soldPackage) {
+        Schedule schedule = new Schedule();
+        ScheduledFlight[] flights = schedule.searchFlights( soldPackage.getDepartureDestinationID(),
+                                                            soldPackage.getDestinationID(),
+                                                            date);
         Trip trip = soldPackage.getEvent();
         Departure departure = DepartureQueries.getAllTripDepartures(trip.getId()).get(0);
         User user = UserQueries.getUser("admin");
@@ -35,7 +42,6 @@ public class Booking {
 
 
         bookFlight(flights[0], date, touristCount, schedule);
-        return true;
     }
 
     public void bookFlight(ScheduledFlight flight, String date, int touristCount, Schedule schedule) {
@@ -57,7 +63,6 @@ public class Booking {
                 return checkRooms(touristCount, currHotel.getRooms());
             }
         }
-
         return false;
     }
 
