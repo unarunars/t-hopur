@@ -111,15 +111,17 @@ public class Fetcher {
         ArrayList packages = getAllPackages();
         ArrayList packageInfo = new ArrayList();
         Package currPackage = null;
+        int[] price;
         for (int i = 0; i<packages.size(); i++) {
             System.out.println(i);
             currPackage = (Package) packages.get(i);
+            price = currPackage.getPrice(14);
             packageInfo.add(currPackage.getName());
-            packageInfo.add(currPackage.getDepartureDestination());
-            packageInfo.add(currPackage.getDestination());
-            packageInfo.add(currPackage.getHotel().getName());
-            packageInfo.add(currPackage.getEvent().getName());
-            packageInfo.add(currPackage.getPrice(14));
+            packageInfo.add("Frá" + currPackage.getDepartureDestination());
+            packageInfo.add(" til " + currPackage.getDestination());
+            packageInfo.add("Hótel: " + currPackage.getHotel().getName());
+            packageInfo.add("Viðburður: " + currPackage.getEvent().getName());
+            packageInfo.add("Verð frá " + price[0] + " - " + price[i]);
         }
         return packageInfo;
     }
