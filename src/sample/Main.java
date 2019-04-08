@@ -64,8 +64,18 @@ public class Main extends Application {
         }
     }
 
+    public static void packages3() {
+        Booking booking = new Booking();
+        Fetcher fetch = new Fetcher();
+        ArrayList packages = fetch.getAllPackages();
+        Package testPackage = (Package) packages.get(1);
+        boolean plz = booking.bookPackage("2019-1-3", 4, testPackage);
+        System.out.println(plz);
+    }
+
     public static void main(String[] args) {
 
+        //packages3();
         //packages2();
         //packages1();
         launch(args);
