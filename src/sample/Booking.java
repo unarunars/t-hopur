@@ -19,7 +19,7 @@ public class Booking {
         ScheduledFlight[] flights = schedule.searchFlights( soldPackage.getDepartureDestinationID(),
                                                             soldPackage.getDestinationID(),
                                                             date);
-        if (flights == null) return false;
+        if (flights.length == 0) return false;
 
         //HotelCheck
         boolean confirmHotel = checkHotel(touristCount, soldPackage.getHotel());
