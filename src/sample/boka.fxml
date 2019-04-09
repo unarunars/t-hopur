@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="560.0" prefWidth="775.0" style="-fx-background-color: C81399; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BokaController">
+<AnchorPane prefHeight="560.0" prefWidth="775.0" style="-fx-background-color: C81399; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.BokaController">
    <children>
       <HBox prefHeight="90.0" prefWidth="775.0" style="-fx-background-color: #921070; -fx-background-radius: 20;">
          <children>
@@ -49,6 +49,6 @@
             <TextField style="-fx-background-color: C81399; -fx-border-color: #921070; -fx-background-radius: 20; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
-      <Button layoutX="323.0" layoutY="444.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="129.0" style="-fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" text="Staðfesta" textFill="WHITE" />
+      <Button layoutX="323.0" layoutY="444.0" mnemonicParsing="false" onAction="#StadfestaHandler" prefHeight="64.0" prefWidth="129.0" style="-fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" text="Staðfesta" textFill="WHITE" />
    </children>
 </AnchorPane>

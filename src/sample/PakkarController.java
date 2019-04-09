@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,18 +14,15 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ArrayList;
 
+import java.util.Observable;
 import java.util.ResourceBundle;
 
 
 public class PakkarController implements Initializable {
     Fetcher fetch = new Fetcher();
     ArrayList packages = fetch.getAllPackages();
-    Booking booking = new Booking();
 
-    /*
-    Package soldPackage = (Package) packages.get(4);
-    String testName = soldPackage.getName();
-    */
+    ObservableList<String> pakkar = FXCollections.observableArrayList("Fjörpakkinn", "Klikkpakinn", "Eyjapakkinn", "Gjöróðipakkinn", "Höfuðsvæðisbeilpakkinn", "PARTYPARTYPARTY", "EKKI missa AF þessum!", "Ástarferðin", "Come fly with me", "Fyrir alla nema pabba");
 
     @FXML
     private Label prufa;
@@ -31,10 +30,13 @@ public class PakkarController implements Initializable {
     private DatePicker date;
     @FXML
     private TextField fjoldiGesta;
+    @FXML
+    private ChoiceBox veljaPakka;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTrips();
+        veljaPakka.setItems(pakkar);
 
     }
     public void showTrips(){
@@ -79,18 +81,44 @@ public class PakkarController implements Initializable {
         Booking booking = new Booking();
         Fetcher fetcher = new Fetcher();
 
+        Package pack = fetcher.getPackageByName(packages, "Fjörpakkinn");
 
-        //if(booking.bookPackage(dagsetning, fjoldiGesta, packages))
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("boka.fxml"));
-            Parent root = (Parent) loader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Bóka");
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            System.out.println("villa: " + e.getMessage());
+        int a = Integer.parseInt(fjoldiGesta.getText());
+
+        if(booking.bookPackage(dagsetning, a, pack)){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("boka.fxml"));
+                Parent root = (Parent) loader.load();
+                Stage stage = new Stage();
+                stage.setTitle("Bóka");
+                stage.setScene(new Scene(root));
+                stage.show();
+            } catch (Exception e) {
+                System.out.println("villa: " + e.getMessage());
+            }
+        }else if(null == fjoldiGesta && date.getValue() == null){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Fjöldi gesta og dagsetning vanntar");
+            alert.setContentText("Vinsamlegast skráðu inn hvað mörg sæti þú villt fá í ferðina og dagsetningu");
+
+            alert.showAndWait();
+        }else if (null == fjoldiGesta){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Fjöldi gesta vanntar");
+            alert.setContentText("Vinsamlegast skráðu inn hvað mörg sæti þú villt fá í ferðina");
+
+            alert.showAndWait();
+        }else if (date.getValue() == null){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Dagsetning vanntar");
+            alert.setContentText("Vinsamlegast veldu dagsetningu");
+
+            alert.showAndWait();
         }
+
     }
     @FXML
     private void medalPakkarHandler(javafx.event.ActionEvent actionEvent){
@@ -165,6 +193,7 @@ public class PakkarController implements Initializable {
             System.out.println("villa: " + e.getMessage());
         }
     }
+
 
 
 }
