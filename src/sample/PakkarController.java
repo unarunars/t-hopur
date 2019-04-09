@@ -60,7 +60,7 @@ public class PakkarController implements Initializable {
         for(int i = 0; i < pakki.size(); i++){
             String a =  pakki.get(i) + " \n ";
             r += a;
-            if ( (i+1) % 9 == 0){
+            if ( (i+1) % 10 == 0){
                 r += "\n";
             }
         }
@@ -128,7 +128,7 @@ public class PakkarController implements Initializable {
         for(int i = 0; i < pakki.size(); i++){
             String a =  pakki.get(i) + " \n ";
             r += a;
-            if ( (i+1) % 9 == 0){
+            if ( (i+1) % 10 == 0){
                 r += "\n";
             }
         }
@@ -143,7 +143,7 @@ public class PakkarController implements Initializable {
         for(int i = 0; i < pakki.size(); i++){
             String a =  pakki.get(i) + " \n ";
             r += a;
-            if ( (i+1) % 9 == 0){
+            if ( (i+1) % 10 == 0){
                 r += "\n";
             }
         }
