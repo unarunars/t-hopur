@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -10,33 +11,36 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="560.0" prefWidth="775.0" style="-fx-background-color: #C81399;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PakkarController">
+<AnchorPane prefHeight="560.0" prefWidth="775.0" style="-fx-background-color: #C81399;" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PakkarController">
    <children>
-      <HBox prefHeight="100.0" prefWidth="775.0" style="-fx-background-color: #921070;">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="775.0" style="-fx-background-color: #921070;">
          <children>
-            <Label prefHeight="99.0" prefWidth="678.0" text="                        Pakkar" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+            <Label prefHeight="99.0" prefWidth="663.0" text="                     Pakkar" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
                <font>
                   <Font name="Century Gothic" size="44.0" />
                </font>
             </Label>
-            <Button fx:id="tilBaka" mnemonicParsing="false" onAction="#tilBakaHandler" prefHeight="94.0" prefWidth="118.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Til baka" textFill="WHITE" />
+            <Button fx:id="tilBaka" mnemonicParsing="false" onAction="#tilBakaHandler" prefHeight="60.0" prefWidth="95.0" style="-fx-background-color: #A70F7F; -fx-background-radius: 20;" text="Til baka" textFill="WHITE" />
          </children></HBox>
-      <ScrollPane layoutX="36.0" layoutY="108.0" prefHeight="364.0" prefWidth="448.0" style="-fx-border-color: #921070; -fx-background-color: #C81399; -fx-border-radius: 20;">
+      <ScrollPane layoutX="36.0" layoutY="108.0" prefHeight="364.0" prefWidth="520.0" style="-fx-border-color: #921070; -fx-background-color: #C81399;">
          <content>
-            <Label fx:id="prufa" prefHeight="5000.0" prefWidth="478.0" style="-fx-background-color: #C81399;" />
+            <Label fx:id="prufa" minHeight="800.0" prefWidth="500.0" style="-fx-background-color: #C81399;" textAlignment="CENTER" textFill="WHITE">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="5.0" />
+               </padding></Label>
          </content>
       </ScrollPane>
       <Button layoutX="626.0" layoutY="130.0" mnemonicParsing="false" onAction="#luxusPakkiHandler" prefHeight="32.0" prefWidth="142.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Lúxus pakkar" textFill="WHITE" />
       <Button layoutX="626.0" layoutY="162.0" mnemonicParsing="false" onAction="#medalPakkarHandler" prefHeight="15.0" prefWidth="142.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Meðalmanns pakkar" textFill="WHITE" />
       <Button layoutX="626.0" layoutY="193.0" mnemonicParsing="false" onAction="#lagPakkaHandler" prefHeight="31.0" prefWidth="142.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Lágstéttar pakkar" textFill="WHITE" />
-      <DatePicker fx:id="date" layoutX="589.0" layoutY="253.0" prefHeight="40.0" prefWidth="177.0" style="-fx-background-color: #A70F7F; -fx-border-color: #921070;" />
+      <DatePicker fx:id="date" layoutX="582.0" layoutY="253.0" prefHeight="40.0" prefWidth="184.0" style="-fx-background-color: #A70F7F; -fx-border-color: #921070;" />
       <Button fx:id="bokaTakki" layoutX="584.0" layoutY="492.0" mnemonicParsing="false" onAction="#BokaHandler" prefHeight="47.0" prefWidth="177.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Boka" textFill="WHITE" />
       <Button layoutX="678.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#dateFilterHandler" prefHeight="23.0" prefWidth="91.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Velja dagsetningu" textFill="WHITE" />
       <Label layoutX="626.0" layoutY="99.0" prefHeight="31.0" prefWidth="123.0" text="Filter:" textFill="WHITE" />
-      <Label layoutX="591.0" layoutY="230.0" prefHeight="23.0" prefWidth="142.0" text="Dagsetning: " textFill="WHITE" />
-      <Label layoutX="579.0" layoutY="412.0" prefHeight="23.0" prefWidth="108.0" text="Fjöldi gesta:" textFill="WHITE" />
-      <TextField fx:id="fjoldiGesta" layoutX="579.0" layoutY="442.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" />
-      <ChoiceBox fx:id="veljaPakka" layoutX="579.0" layoutY="375.0" prefWidth="150.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" />
+      <Label layoutX="583.0" layoutY="230.0" prefHeight="23.0" prefWidth="150.0" text="Dagsetning: " textFill="WHITE" />
+      <Label layoutX="583.0" layoutY="408.0" prefHeight="23.0" prefWidth="130.0" text="Fjöldi gesta:" textFill="WHITE" />
+      <TextField fx:id="fjoldiGesta" layoutX="579.0" layoutY="442.0" style="-fx-border-color: #921070; -fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-radius: 20;" />
+      <ChoiceBox fx:id="veljaPakka" layoutX="579.0" layoutY="375.0" prefWidth="150.0" style="-fx-background-color: EE73CD; -fx-background-radius: 20;" />
       <Label layoutX="584.0" layoutY="346.0" prefHeight="10.0" prefWidth="142.0" text="Hvaða pakka villtu?" textFill="WHITE" />
    </children>
 </AnchorPane>

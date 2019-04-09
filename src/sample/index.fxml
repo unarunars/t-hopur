@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="559.0" prefWidth="775.0" style="-fx-background-color: #C81399; -fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane prefHeight="559.0" prefWidth="775.0" style="-fx-background-color: #C81399; -fx-background-radius: 0;" xmlns="http://javafx.com/javafx/8.0.162-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <HBox prefHeight="90.0" prefWidth="775.0" style="-fx-background-color: #921070; -fx-background-radius: 20;">
+      <HBox prefHeight="90.0" prefWidth="775.0" style="-fx-background-color: #921070; -fx-background-radius: 0;">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="778.0" style="-fx-background-radius: 20; -fx-border-insets: 0;" text="VÁ-Ferðir" textFill="#fcfcfc">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="778.0" style="-fx-background-radius: 0;" text="VÁ-Ferðir" textFill="#fcfcfc">
                <font>
                   <Font name="Century Gothic" size="44.0" />
                </font>
