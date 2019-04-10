@@ -1,4 +1,5 @@
 package sample;
+import javafx.scene.Node;
 import leit.flug.Schedule;
 import leit.flug.ScheduledFlight;
 import leit.flug.Flight;
@@ -20,10 +21,23 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+        // Upprunalegi FXMLLoaderinn okkar
+        /*
         Parent root = FXMLLoader.load(getClass().getResource("index.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+        */
+
+        // Þetta er lausnin á að það poppi ekki alltaf upp nýr gluggi hvert skipti sem
+        // ýtt er á takka til að ráfa um þetta forrit
+        Parent adal_heim = FXMLLoader.load(getClass().getResource("index.fxml"));
+        Scene adal_scene = new Scene(adal_heim);
+        //Stage heim_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setTitle("Vá-Ferðir bjóða þér velkominn");
+        stage.setScene(adal_scene);
+        stage.show();
+
     }
 
     public static void packages1() {

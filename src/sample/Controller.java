@@ -37,12 +37,25 @@ public class Controller implements Initializable {
     @FXML
     private void hotelHandler(javafx.event.ActionEvent actionEvent){
         try {
+            // Þetta er window/scene loaderinn sem var til staðar
+            /*
             FXMLLoader loader = new FXMLLoader(getClass().getResource("hotel.fxml"));
             Parent root = (Parent) loader.load();
             Stage stage = new Stage();
             stage.setTitle("Hótel");
             stage.setScene(new Scene(root));
             stage.show();
+            */
+
+            // Þetta er lausnin á að það poppi ekki alltaf upp nýr gluggi hvert skipti sem
+            // ýtt er á takka til að ráfa um þetta forrit
+            Parent adal_heim = FXMLLoader.load(getClass().getResource("hotel.fxml"));
+            Scene adal_scene = new Scene(adal_heim);
+            Stage heim_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            heim_stage.setTitle("Þetta eru hótelin sem eru í boði");
+            heim_stage.setScene(adal_scene);
+            heim_stage.show();
+
         } catch (Exception e) {
             System.out.println("villa: " + e.getMessage());
         }
@@ -52,12 +65,25 @@ public class Controller implements Initializable {
     @FXML
     private void pakkiHandler(javafx.event.ActionEvent actionEvent){
         try {
+            // Þetta er window/scene loaderinn sem var til staðar
+            /*
             FXMLLoader loader = new FXMLLoader(getClass().getResource("pakkar.fxml"));
             Parent root = (Parent) loader.load();
             Stage stage = new Stage();
             stage.setTitle("Pakkar");
             stage.setScene(new Scene(root));
             stage.show();
+            */
+
+            // Þetta er lausnin á að það poppi ekki alltaf upp nýr gluggi hvert skipti sem
+            // ýtt er á takka til að ráfa um þetta forrit
+            Parent adal_heim = FXMLLoader.load(getClass().getResource("pakkar.fxml"));
+            Scene adal_scene = new Scene(adal_heim);
+            Stage heim_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            heim_stage.setTitle("Endilega veldu þér pakka sem hentar tilefninu");
+            heim_stage.setScene(adal_scene);
+            heim_stage.show();
+
         } catch (Exception e) {
             System.out.println("villa: " + e.getMessage());
         }
@@ -65,12 +91,25 @@ public class Controller implements Initializable {
     @FXML
     private void flugHandler(javafx.event.ActionEvent actionEvent){
         try {
+            // Þetta er window/scene loaderinn sem var til staðar
+            /*
             FXMLLoader loader = new FXMLLoader(getClass().getResource("flug.fxml"));
             Parent root = (Parent) loader.load();
             Stage stage = new Stage();
             stage.setTitle("Flug");
             stage.setScene(new Scene(root));
             stage.show();
+            */
+
+            // Þetta er lausnin á að það poppi ekki alltaf upp nýr gluggi hvert skipti sem
+            // ýtt er á takka til að ráfa um þetta forrit
+            Parent adal_heim = FXMLLoader.load(getClass().getResource("flug.fxml"));
+            Scene adal_scene = new Scene(adal_heim);
+            Stage heim_stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+            heim_stage.setTitle("Þessi flug eru í boða hjá okkur");
+            heim_stage.setScene(adal_scene);
+            heim_stage.show();
+
         } catch (Exception e) {
             System.out.println("villa: " + e.getMessage());
         }
