@@ -43,10 +43,10 @@
             <Label text="Netfang:" textFill="WHITE" GridPane.rowIndex="1" />
             <Label prefHeight="44.0" prefWidth="129.0" text="Kortanúmer:" textFill="WHITE" GridPane.rowIndex="2" />
             <Label text="Öryggisnúmer:" textFill="WHITE" GridPane.rowIndex="3" />
-            <TextField style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" />
-            <TextField style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="nafn" onAction="#StadfestaHandler" style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" />
+            <TextField fx:id="netfang" onAction="#StadfestaHandler" style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="card" onAction="#StadfestaHandler" style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="cvc" onAction="#StadfestaHandler" style="-fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Button layoutX="323.0" layoutY="444.0" mnemonicParsing="false" onAction="#StadfestaHandler" prefHeight="64.0" prefWidth="129.0" style="-fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-color: #921070; -fx-border-radius: 20;" text="Staðfesta" textFill="WHITE" />
