@@ -33,14 +33,15 @@
       <Button layoutX="584.0" layoutY="130.0" mnemonicParsing="false" onAction="#luxusPakkiHandler" prefHeight="33.0" prefWidth="184.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Lúxus pakkar" textFill="WHITE" />
       <Button layoutX="584.0" layoutY="162.0" mnemonicParsing="false" onAction="#medalPakkarHandler" prefHeight="33.0" prefWidth="184.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Meðalmanns pakkar" textFill="WHITE" />
       <Button layoutX="584.0" layoutY="193.0" mnemonicParsing="false" onAction="#lagPakkaHandler" prefHeight="33.0" prefWidth="184.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Lágstéttar pakkar" textFill="WHITE" />
-      <DatePicker fx:id="date" layoutX="582.0" layoutY="253.0" prefHeight="40.0" prefWidth="184.0" style="-fx-background-color: #A70F7F; -fx-border-color: #921070;" />
+      <DatePicker fx:id="date" layoutX="582.0" layoutY="253.0" prefHeight="23.0" prefWidth="177.0" style="-fx-background-color: #A70F7F; -fx-border-color: #921070;" />
       <Button fx:id="bokaTakki" layoutX="584.0" layoutY="492.0" mnemonicParsing="false" onAction="#BokaHandler" prefHeight="47.0" prefWidth="177.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Boka" textFill="WHITE" />
-      <Button layoutX="585.0" layoutY="302.0" mnemonicParsing="false" onMouseClicked="#dateFilterHandler" prefHeight="33.0" prefWidth="184.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Velja dagsetningu" textFill="WHITE" />
+      <Button layoutX="584.0" layoutY="290.0" mnemonicParsing="false" onMouseClicked="#dateFilterHandler" prefHeight="33.0" prefWidth="184.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Velja dagsetningu" textFill="WHITE" />
       <Label layoutX="579.0" layoutY="100.0" prefHeight="31.0" prefWidth="123.0" text="Filter:" textFill="WHITE" />
       <Label layoutX="583.0" layoutY="230.0" prefHeight="23.0" prefWidth="150.0" text="Dagsetning: " textFill="WHITE" />
-      <Label layoutX="583.0" layoutY="408.0" prefHeight="23.0" prefWidth="130.0" text="Fjöldi gesta:" textFill="WHITE" />
+      <Label layoutX="589.0" layoutY="419.0" prefHeight="23.0" prefWidth="130.0" text="Fjöldi gesta:" textFill="WHITE" />
       <TextField fx:id="fjoldiGesta" layoutX="579.0" layoutY="442.0" style="-fx-border-color: #921070; -fx-background-color: EE73CD; -fx-background-radius: 20; -fx-border-radius: 20;" />
-      <ChoiceBox fx:id="veljaPakka" layoutX="579.0" layoutY="375.0" prefWidth="150.0" style="-fx-background-color: EE73CD; -fx-background-radius: 20;" />
-      <Label layoutX="584.0" layoutY="346.0" prefHeight="10.0" prefWidth="142.0" text="Hvaða pakka villtu?" textFill="WHITE" />
+      <ChoiceBox fx:id="veljaPakka" layoutX="579.0" layoutY="344.0" prefWidth="150.0" style="-fx-background-color: EE73CD; -fx-background-radius: 20;" />
+      <Label layoutX="583.0" layoutY="323.0" prefHeight="10.0" prefWidth="142.0" text="Hvaða pakka villtu?" textFill="WHITE" />
+      <Button layoutX="579.0" layoutY="386.0" mnemonicParsing="false" onAction="#veljaPakkaHandler" prefHeight="33.0" prefWidth="184.0" style="-fx-border-color: #921070; -fx-background-color: #A70F7F; -fx-background-radius: 20; -fx-border-radius: 20;" text="Velja pakka" textFill="WHITE" />
    </children>
 </AnchorPane>

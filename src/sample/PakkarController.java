@@ -1,7 +1,9 @@
 package sample;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,7 +26,7 @@ public class PakkarController implements Initializable {
     ArrayList packages = fetch.getAllPackages();
 
     ObservableList<String> pakkar = FXCollections.observableArrayList("Fjörpakkinn", "Klikkpakinn", "Eyjapakkinn", "Gjöróðipakkinn", "Höfuðsvæðisbeilpakkinn", "PARTYPARTYPARTY", "EKKI missa AF þessum!", "Ástarferðin", "Come fly with me", "Fyrir alla nema pabba");
-
+    //ObservableList<String> pakkar = FXCollections.observableArrayList(fetch.getPackageNames(packages));
     @FXML
     private Label prufa;
     @FXML
@@ -34,10 +36,20 @@ public class PakkarController implements Initializable {
     @FXML
     private ChoiceBox veljaPakka;
 
+    private String packName;
+
+    //String packName = veljaPakka.getId();
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showTrips();
+        Fetcher fetcher = new Fetcher();
         veljaPakka.setItems(pakkar);
+        if( veljaPakka.getId() != null){
+            System.out.println(veljaPakka.getSelectionModel());
+        }
+
 
     }
     public void showTrips(){
@@ -53,6 +65,8 @@ public class PakkarController implements Initializable {
         }
         prufa.setText(r);
     }
+
+
     @FXML
     private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
         Fetcher fetch = new Fetcher();
@@ -69,24 +83,29 @@ public class PakkarController implements Initializable {
 
     }
     @FXML
-    private void BokaHandler(javafx.event.ActionEvent actionEvent){
+    private void BokaHandler(javafx.event.ActionEvent actionEvent) {
         int year = (date.getValue().getYear());
         int day = (date.getValue().getDayOfMonth());
         int month = (date.getValue().getMonthValue());
 
         String ar = Integer.toString(year);
-        String dagur= Integer.toString(day);
+        String dagur = Integer.toString(day);
         String manudur = Integer.toString(month);
 
-        String dagsetning = ar + "-" + manudur + "-" + dagur;
+        String dagsetning = ar + manudur + dagur;
         Booking booking = new Booking();
         Fetcher fetcher = new Fetcher();
+        System.out.println(veljaPakka.getValue().toString());
+        Package pack = (Package) fetcher.getPackageByName(packages, packName);
 
-        Package pack = fetcher.getPackageByName(packages, "Fjörpakkinn");
+        int fjoldi = Integer.parseInt(fjoldiGesta.getText());
+        System.out.println(pack.getName());
+        System.out.println("fjöldi gesta : " + fjoldi);
+        System.out.println("date.getValur : " + date.getValue());
+        System.out.println("pakki :  "+ packName);
 
-        int a = Integer.parseInt(fjoldiGesta.getText());
-
-        if(booking.bookPackage(dagsetning, a, pack)){
+        System.out.println(booking.bookPackage(dagsetning, fjoldi, pack));
+        if (booking.bookPackage(dagsetning, fjoldi, pack) == true) {
             try {
                 /*
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("boka.fxml"));
@@ -109,28 +128,41 @@ public class PakkarController implements Initializable {
             } catch (Exception e) {
                 System.out.println("villa: " + e.getMessage());
             }
-        }else if(null == fjoldiGesta && date.getValue() == null){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning");
-            alert.setHeaderText("Fjöldi gesta og dagsetning vanntar");
-            alert.setContentText("Vinsamlegast skráðu inn hvað mörg sæti þú villt fá í ferðina og dagsetningu");
+        }/*
+        else if( fjoldi == 0 && date.getValue() == null){
+            try {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText("Fjöldi gesta og dagsetning vanntar");
+                alert.setContentText("Vinsamlegast skráðu inn hvað mörg sæti þú villt fá í ferðina og dagsetningu");
 
-            alert.showAndWait();
-        }else if (null == fjoldiGesta){
+                alert.showAndWait();
+            } catch (Exception e){
+                System.out.println("villa: " + e.getMessage());
+            }
+
+        }else if (0 == fjoldi){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
             alert.setHeaderText("Fjöldi gesta vanntar");
             alert.setContentText("Vinsamlegast skráðu inn hvað mörg sæti þú villt fá í ferðina");
 
             alert.showAndWait();
-        }else if (date.getValue() == null){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning");
-            alert.setHeaderText("Dagsetning vanntar");
-            alert.setContentText("Vinsamlegast veldu dagsetningu");
+        }*/
+        else{
+            try{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText("Pakki sem þú valdir er ekki til");
+                alert.setContentText("Vinsamlegast veldu pakka sem er í boði á dagsetningu sem þú valdir");
 
-            alert.showAndWait();
+                alert.showAndWait();
+            } catch (Exception e){
+                System.out.println("villa: " + e.getMessage());
+            }
+
         }
+
 
     }
     @FXML
@@ -220,6 +252,9 @@ public class PakkarController implements Initializable {
         }
     }
 
-
-
+    @FXML
+    public void veljaPakkaHandler(ActionEvent actionEvent) {
+        packName = veljaPakka.getValue().toString();
+        System.out.println(packName);
+    }
 }

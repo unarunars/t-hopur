@@ -1,6 +1,7 @@
 package sample;
 
 import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
+import javafx.collections.ObservableList;
 import leit.flug.Schedule;
 import leit.flug.ScheduledFlight;
 import leit.flug.DatabaseManager;
@@ -149,6 +150,13 @@ public class Fetcher {
         }
 
         return null;
+    }
+    public ObservableList getPackageNames(ArrayList packages){
+        ObservableList currArray = null;
+        for(int i = 0; i < packages.size() ; i++){
+            currArray = (ObservableList) packages.get(i);
+        }
+        return currArray;
     }
 
     public ArrayList getPackageInfo(ArrayList packages, int filterMax, int filterMin) {
