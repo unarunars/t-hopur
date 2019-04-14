@@ -92,7 +92,7 @@ public class PakkarController implements Initializable {
         String dagur = Integer.toString(day);
         String manudur = Integer.toString(month);
 
-        String dagsetning = ar + manudur + dagur;
+        String dagsetning = ar + "-" +manudur + "-"+ dagur;
         Booking booking = new Booking();
         Fetcher fetcher = new Fetcher();
         System.out.println(veljaPakka.getValue().toString());
@@ -104,7 +104,6 @@ public class PakkarController implements Initializable {
         System.out.println("date.getValur : " + date.getValue());
         System.out.println("pakki :  "+ packName);
 
-        System.out.println(booking.bookPackage(dagsetning, fjoldi, pack));
         if (booking.bookPackage(dagsetning, fjoldi, pack) == true) {
             try {
                 /*
