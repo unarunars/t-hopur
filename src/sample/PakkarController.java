@@ -25,7 +25,7 @@ public class PakkarController implements Initializable {
     Fetcher fetch = new Fetcher();
     ArrayList packages = fetch.getAllPackages();
 
-    ObservableList<String> pakkar = FXCollections.observableArrayList("Fjörpakkinn", "Klikkpakinn", "Eyjapakkinn", "Gjöróðipakkinn", "Höfuðsvæðisbeilpakkinn", "PARTYPARTYPARTY", "EKKI missa AF þessum!", "Ástarferðin", "Come fly with me", "Fyrir alla nema pabba");
+    ObservableList<String> pakkar = FXCollections.observableArrayList("Fjörpakkinn", "Klikkpakkinn", "Eyjabailpakkinn", "Gjöróðipakkinn", "Höfuðsvæðisbeilpakkinn", "PARTYPARTYPARTY", "EKKI missa AF þessum!", "Ástarferðin", "Come fly with me", "Fyrir alla nema pabba");
     //ObservableList<String> pakkar = FXCollections.observableArrayList(fetch.getPackageNames(packages));
     @FXML
     private Label prufa;
@@ -100,9 +100,9 @@ public class PakkarController implements Initializable {
 
         int fjoldi = Integer.parseInt(fjoldiGesta.getText());
         System.out.println(pack.getName());
-        System.out.println("fjöldi gesta : " + fjoldi);
-        System.out.println("date.getValur : " + date.getValue());
-        System.out.println("pakki :  "+ packName);
+        // System.out.println("fjöldi gesta : " + fjoldi);
+        // System.out.println("date.getValur : " + date.getValue());
+        // sSystem.out.println("pakki :  "+ packName);
 
         if (booking.bookPackage(dagsetning, fjoldi, pack) == true) {
             try {
