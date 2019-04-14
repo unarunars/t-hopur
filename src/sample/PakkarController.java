@@ -56,7 +56,7 @@ public class PakkarController implements Initializable {
     @FXML
     private void luxusPakkiHandler(javafx.event.ActionEvent actionEvent){
         Fetcher fetch = new Fetcher();
-        ArrayList pakki = fetch.getPackageInfo(packages, 500000,300000);
+        ArrayList pakki = fetch.getPackageInfo(packages, 100000000,400000);
         String r = "";
         for(int i = 0; i < pakki.size(); i++){
             String a =  pakki.get(i) + " \n ";
@@ -136,7 +136,7 @@ public class PakkarController implements Initializable {
     @FXML
     private void medalPakkarHandler(javafx.event.ActionEvent actionEvent){
         Fetcher fetch = new Fetcher();
-        ArrayList pakki = fetch.getPackageInfo(packages, 300000,100000);
+        ArrayList pakki = fetch.getPackageInfo(packages, 400000,100000);
         String r = "";
         for(int i = 0; i < pakki.size(); i++){
             String a =  pakki.get(i) + " \n ";
